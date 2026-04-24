@@ -1,0 +1,352 @@
+@use '../../styles/variables' as *;
+@use 'sass:color';
+
+.qs {
+  &__contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calc(#{$navbar-altura} + #{$espacio-lg}) $espacio-xxl $espacio-xs;
+    gap: $espacio-md;
+    background: linear-gradient(180deg, $marron 0%, $crema 70%);
+
+    &::after {
+      content: '';
+      width: 80%;
+      height: 5px;
+      margin-top: $espacio-md;
+      background-color: $marron;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+    }
+
+    &-titulo {
+      color: $verde-oliva;
+      text-shadow: 1px 1px 5px $dorado;
+      font-size: 5.4rem;
+    }
+
+    &-texto {
+      color: $marron;
+      text-align: center;
+
+      font-size: 1.4rem;
+    }
+
+  }
+
+  // ── HISTORIA ──────────────────────────────────────────────────────────────
+  &__historia {
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $espacio-xxl;
+      align-items: center;
+
+      @media (max-width: $bp-tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-texto {
+      color: $marron;
+
+      h2 {
+        margin-bottom: $espacio-lg;
+      }
+
+      p {
+        font-size: 1rem;
+        text-align: justify;
+        line-height: 1.75;
+      }
+
+      p + p {
+        margin-top: $espacio-sm;
+      }
+    }
+
+    &-img {
+      height: 420px;
+      border-radius: $radio-xl;
+      background-image: url('/img/imgCompromiso.webp');
+      background-size: cover;
+      background-position: center;
+      box-shadow: $sombra-media;
+
+      @media (max-width: $bp-tablet) {
+        height: 280px;
+      }
+    }
+  }
+
+  // ── MISIÓN Y VISIÓN ───────────────────────────────────────────────────────
+  &__mv {
+    position: relative;
+    background-image: url('/img/bg-Savannah.webp');
+    background-size: cover;
+    background-position: center 65%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    &-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $espacio-xl;
+
+      @media (max-width: $bp-tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-tarjeta {
+      padding: $espacio-md;
+      border-radius: $radio-xl;
+      border-top: 5px solid transparent;
+
+      p {
+        color: $marron;
+        font-size: 1.1rem;
+        line-height: 1.75;
+        text-align: justify;
+        margin-top: $espacio-sm;
+      }
+
+      &--mision {
+        background-color: color.mix($naranja, $crema, 8%);
+        border-top-color: $naranja;
+      }
+
+      &--vision {
+        background-color: color.mix($verde-oliva, $crema, 8%);
+        border-top-color: $verde-oliva;
+      }
+    }
+
+    &-cabecera {
+      display: flex;
+      align-items: center;
+      gap: $espacio-sm;
+
+
+      h3 {
+        font-family: $fuente-titulo;
+        font-size: 2rem;
+        margin: 0;
+      }
+    }
+
+    &-icono {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+  }
+
+  // ── VALORES ───────────────────────────────────────────────────────────────
+  &__valores {
+    position: relative;
+    background-color: $crema;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 10px;
+      background-color: $verde-oliva;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+    }
+
+    &-cabecera {
+      text-align: center;
+      margin-bottom: $espacio-md;
+
+      .titulo-seccion {
+        color: $verde-oliva;
+      }
+    }
+
+    &-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: $espacio-sm;
+    }
+  }
+
+  &__valor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $blanco;
+    padding: $espacio-sm $espacio-md;
+    border-radius: $radio-xl;
+    box-shadow: $sombra-suave;
+    min-width: 145px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $sombra-media;
+    }
+
+    &-icono {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-nombre {
+      font-family: $fuente-titulo;
+      font-size: 1rem;
+      font-weight: $peso-semibold;
+      color: $marron-tierra;
+    }
+  }
+
+  // ── EQUIPO ────────────────────────────────────────────────────────────────
+  &__equipo {
+    background-color: $gris-claro;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $espacio-sm;
+      margin-top: $espacio-md;
+
+      @media (max-width: $bp-escritorio) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: $bp-movil) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__rol {
+    padding: $espacio-sm;
+    background-color: $crema;
+    border-radius: $radio-md;
+    border-left: 4px solid $naranja;
+
+    h4 {
+      color: $naranja;
+      font-family: $fuente-titulo;
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $marron;
+    }
+  }
+
+  // ── DÓNDE TRABAJAMOS ──────────────────────────────────────────────────────
+  &__donde {
+    background: linear-gradient(135deg, $marron 0%, #3a2e28 100%);
+    padding: $espacio-xl 0;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: $espacio-lg;
+      align-items: center;
+
+      @media (max-width: $bp-tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-texto {
+      .etiqueta-seccion {
+        color: $dorado;
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        color: $crema;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        margin-bottom: $espacio-sm;
+      }
+    }
+
+    &-bloque {
+      margin-bottom: $espacio-sm;
+
+      h4 {
+        color: $dorado;
+        font-family: $fuente-titulo;
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__mapa {
+    height: 420px;
+    border-radius: $radio-xl;
+    overflow: hidden;
+    box-shadow: $sombra-fuerte;
+
+    @media (max-width: $bp-tablet) {
+      height: 300px;
+    }
+  }
+
+  // ── CTA ───────────────────────────────────────────────────────────────────
+  &__cta {
+    background-color: $verde-oliva;
+    padding: $espacio-lg 0;
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: $espacio-sm;
+
+      h2 {
+        color: $blanco;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.82);
+        max-width: 480px;
+      }
+    }
+
+    &-botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,299 @@
+@use '../../styles/variables' as *;
+
+.inicio {
+
+  // ── HERO ──────────────────────────────────────────────────────────────────
+  &__hero {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('/img/imgHero.webp');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+
+    // Gradient overlay for text readability
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        110deg,
+        rgba(0, 0, 0, 0.62) 0%,
+        rgba(0, 0, 0, 0.35) 55%,
+        rgba(0, 0, 0, 0.08) 100%
+      );
+    }
+
+    &-contenido {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: $ancho-max;
+      margin: 0 auto;
+      padding: calc(#{$navbar-altura} + #{$espacio-lg}) $espacio-md $espacio-xl;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $espacio-md;
+    }
+
+    &-titulo {
+      font-size: clamp(4rem, 9vw, 6.2rem);
+      line-height: 1.05;
+      margin-bottom: $espacio-sm;
+      letter-spacing: 0.1rem;
+      text-shadow: 2px 2px 10px black;
+
+      &-mkono { color: $verde-lima; }
+      &-amiga  { color: $naranja; }
+    }
+
+    &-subtitulo {
+      font-family: $fuente-titulo;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      color: $blanco;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: 0.06rem;
+      margin-bottom: $espacio-sm;
+    }
+
+    &-descripcion {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.75;
+      max-width: 440px;
+    }
+
+    &-botones {
+      display: flex;
+      flex-direction: row;
+      gap: $espacio-sm;
+    }
+
+    @media (max-width: $bp-tablet) {
+      &-contenido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $espacio-md;
+        padding: calc(#{$navbar-altura} + #{$espacio-md}) $espacio-sm $espacio-lg;
+      }
+
+      &-botones {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+    }
+  }
+
+  // ── ESTADÍSTICAS — flotante entre hero y quiénes somos ───────────────────
+  &__impacto {
+    position: relative;
+    z-index: 10;
+    margin-top: -3.5rem;
+    padding: 0 $espacio-md;
+    background: transparent;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background-color: $gris-claro;
+      border-radius: $radio-lg;
+      box-shadow: $sombra-fuerte;
+      overflow: hidden;
+
+      @media (max-width: $bp-tablet) {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: $espacio-sm;
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 20%;
+        height: 60%;
+        width: 1px;
+        background-color: $verde-oliva;
+
+        @media (max-width: $bp-tablet) {
+          width: 60%;
+          height: 1px;
+          right: auto;
+          top: auto;
+          bottom: 0;
+          left: 20%;
+        }
+      }
+    }
+
+    &-fila {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    &-icono {
+      font-size: 1.6rem;
+    }
+
+    &-numero {
+      font-family: $fuente-titulo;
+      font-size: 2.6rem;
+      font-weight: $peso-bold;
+      color: $naranja;
+      line-height: 1;
+    }
+
+    &-desc {
+      font-size: 1rem;
+      color: $verde-oliva;
+      font-weight: $peso-medio;
+    }
+  }
+
+  // ── QUIÉNES SOMOS (preview) ───────────────────────────────────────────────
+  &__quienes {
+    background-color: $crema;
+    padding-top: $espacio-lg;
+
+    @media (min-width: $bp-tablet) {
+      padding-top: $espacio-xl;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &-titulo {
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      margin-bottom: $espacio-sm;
+    }
+
+    &-texto {
+      font-size: 1.1rem;
+      color: $marron;
+      max-width: 480px;
+      margin-bottom: $espacio-md;
+    }
+
+    .btn {
+      margin-top: $espacio-lg;
+      padding: 0.75rem 3rem;
+      font-size: 1.05rem;
+      background-color: $verde-lima;
+      border-color: $verde-lima;
+      box-shadow: 2px 2px 10px black;
+
+      &:hover {
+        background-color: darken($verde-lima, 10%);
+        border-color: darken($verde-lima, 10%);
+      }
+    }
+  }
+
+  &__areas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $espacio-md;
+    width: 100%;
+    max-width: 980px;
+    margin-bottom: $espacio-md;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      max-width: 260px;
+    }
+  }
+
+  &__area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    &-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &-etiqueta {
+      font-size: 1.2rem;
+      font-weight: $peso-semibold;
+      color: $blanco;
+      padding: 0.3rem 3rem;
+      border-radius: $radio-lg;
+      margin-top: -1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    &--verde {
+      .inicio__area-img {
+        background-image: url('/img/atencionMedica.webp');
+        border: 4px solid $verde-oliva;
+      }
+      .inicio__area-etiqueta { background-color: $verde-oliva; }
+    }
+
+    &--naranja {
+      .inicio__area-img {
+        background-image: url('/img/educacionInclusiva.webp');
+        border: 4px solid $naranja;
+      }
+      .inicio__area-etiqueta { background-color: $naranja; }
+    }
+
+    &--marron {
+      .inicio__area-img {
+        background-image: url('/img/apoyoFamiliar.webp');
+        border: 4px solid $marron-tierra;
+      }
+      .inicio__area-etiqueta { background-color: $marron-tierra; }
+    }
+  }
+
+  // ── CTA FINAL ─────────────────────────────────────────────────────────────
+  &__cta {
+    background-color: $verde-oliva;
+    padding: $espacio-lg 0;
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: $espacio-md;
+
+      h2 {
+        color: $blanco;
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.82);
+        max-width: 480px;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

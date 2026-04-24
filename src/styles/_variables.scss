@@ -1,0 +1,67 @@
+// === COLORES (paleta moodboard) ===
+// 1ª muestra — marrón carbón oscuro: fondos navbar, footer, banners
+$marron-tierra: #b67d45;
+// 2ª muestra — verde bosque
+$verde-oliva: #476528;
+
+$verde-lima: #82BD1C;
+// 3ª muestra — ámbar dorado: acento cálido, cifras de impacto
+$dorado: #C8A028;
+// 4ª muestra — terracota/naranja quemado: botones CTA, links
+$naranja: #ff6c3b;
+// 5ª muestra — crema cálida: fondo principal
+$crema: #F5EDD8;
+
+$blanco: #FFFFFF;
+$gris-claro: #f4f4eb;
+$marron: #7A6050;
+$crema-oscura: #ecdaab;
+
+// Variantes hover
+$naranja-hover: #A33C1C;
+$verde-hover: #365220;
+$dorado-hover: #A88020;
+
+// === TIPOGRAFÍA ===
+// Primaria: Caveat Brush — manuscrita, cálida y cercana (solo peso 400)
+// Secundaria: Mulish — simple, legible y clara
+$fuente-titulo: 'Caveat Brush', cursive;
+$fuente-cuerpo: 'Mulish', 'Helvetica Neue', sans-serif;
+
+$peso-regular: 400;
+$peso-medio: 500;
+$peso-semibold: 600;
+$peso-bold: 700;
+
+// === ESPACIADOS ===
+$espacio-xs: 0.5rem;
+$espacio-sm: 1rem;
+$espacio-md: 2rem;
+$espacio-lg: 4rem;
+$espacio-xl: 6rem;
+$espacio-xxl: 8rem;
+
+// === LAYOUT ===
+$ancho-max: 1200px;
+$navbar-altura: 80px;
+
+// === BORDES ===
+$radio-sm: 4px;
+$radio-md: 8px;
+$radio-lg: 16px;
+$radio-xl: 24px;
+$radio-pill: 50px;
+
+// === SOMBRAS ===
+$sombra-suave: 0 2px 12px rgba(42, 37, 32, 0.08);
+$sombra-media: 0 4px 24px rgba(42, 37, 32, 0.14);
+$sombra-fuerte: 0 6px 35px rgba(42, 37, 32, 0.82);
+
+// === BREAKPOINTS ===
+$bp-movil: 576px;
+$bp-tablet: 768px;
+$bp-escritorio: 1024px;
+$bp-grande: 1280px;
+
+// === TRANSICIONES ===
+$transicion: all 0.3s ease;

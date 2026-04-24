@@ -1,0 +1,225 @@
+@use 'variables' as *;
+
+// === RESET BASE ===
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $fuente-cuerpo;
+  font-weight: $peso-regular;
+  color: $marron-tierra;
+  background-color: $crema;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// === TIPOGRAFÍA ===
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fuente-titulo;
+  font-weight: 400; // Caveat Brush solo tiene peso 400
+  line-height: 1.2;
+  color: $marron-tierra;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.78;
+}
+
+a {
+  color: $naranja;
+  text-decoration: none;
+  transition: $transicion;
+
+  &:hover {
+    color: $naranja-hover;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+strong {
+  font-weight: $peso-semibold;
+}
+
+// === CONTENEDOR ===
+.contenedor {
+  width: 100%;
+  max-width: $ancho-max;
+  margin: 0 auto;
+  padding: 0 $espacio-sm;
+
+  @media (min-width: $bp-tablet) {
+    padding: 0 $espacio-md;
+  }
+}
+
+// === SECCIÓN ===
+.seccion {
+  padding: $espacio-lg 0;
+
+  @media (min-width: $bp-tablet) {
+    padding: $espacio-xl 0;
+  }
+}
+
+// === BOTONES ===
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  border-radius: $radio-lg;
+  font-family: $fuente-cuerpo;
+  font-weight: $peso-semibold;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: $transicion;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &--primario {
+    background-color: $naranja;
+    color: $blanco;
+    border-color: $naranja;
+
+    &:hover {
+      background-color: $blanco;
+      border-color: $naranja-hover;
+      color: $naranja-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secundario {
+    background-color: transparent;
+    color: $verde-lima;
+    border-color: $verde-lima;
+
+    &:hover {
+      background-color: $blanco;
+      color: $verde-hover;
+      border-color: $verde-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--verde {
+    background-color: $verde-oliva;
+    color: $blanco;
+    border-color: $verde-oliva;
+
+    &:hover {
+      background-color: $verde-hover;
+      border-color: $verde-hover;
+      color: $blanco;
+      transform: translateY(-2px);
+      box-shadow: $sombra-media;
+    }
+  }
+
+  &--contorno {
+    background-color: transparent;
+    color: $naranja;
+    border-color: $naranja;
+
+    &:hover {
+      background-color: $naranja;
+      color: $blanco;
+      transform: translateY(-2px);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
+// === UTILIDADES TIPOGRÁFICAS ===
+.etiqueta-seccion {
+  font-family: $fuente-cuerpo;
+  font-size: 0.82rem;
+  font-weight: $peso-semibold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $naranja;
+  display: block;
+  margin-bottom: $espacio-xs;
+}
+
+.titulo-seccion {
+  font-family: $fuente-titulo;
+  color: $naranja;
+  margin-bottom: $espacio-lg;
+  
+}
+
+.subtitulo-seccion {
+  font-size: 1.05rem;
+  color: $marron;
+  max-width: 580px;
+  line-height: 1.75;
+}
+
+// === BANNER PÁGINAS INTERIORES ===
+.banner-pagina {
+  background-color: $marron-tierra;
+  padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-lg;
+
+  h1 {
+    color: $blanco;
+    margin-bottom: $espacio-xs;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+}

@@ -1,0 +1,196 @@
+@use '../../styles/variables' as *;
+
+.contacto {
+
+  &__seccion {
+    background-color: $crema;
+  }
+
+  // ── GRID PRINCIPAL ────────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: $espacio-lg;
+    align-items: start;
+
+    @media (max-width: $bp-escritorio) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ── FORMULARIO ────────────────────────────────────────────────────────────
+  &__formulario-wrapper {
+    background-color: $blanco;
+    border-radius: $radio-xl;
+    padding: $espacio-md;
+    box-shadow: $sombra-suave;
+  }
+
+  &__form-titulo {
+    font-size: 1.6rem;
+    margin-bottom: $espacio-md;
+    color: $marron-tierra;
+  }
+
+  &__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: $espacio-sm;
+
+    label {
+      font-size: 0.88rem;
+      font-weight: $peso-semibold;
+      color: $marron-tierra;
+      letter-spacing: 0.04em;
+    }
+
+    input,
+    textarea {
+      font-family: $fuente-cuerpo;
+      font-size: 0.98rem;
+      color: $marron-tierra;
+      background-color: $crema;
+      border: 1.5px solid $gris-claro;
+      border-radius: $radio-md;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.22s ease, box-shadow 0.22s ease;
+      resize: vertical;
+      width: 100%;
+
+      &::placeholder {
+        color: $marron;
+        opacity: 0.6;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $naranja;
+        box-shadow: 0 0 0 3px rgba(232, 105, 42, 0.15);
+        background-color: $blanco;
+      }
+    }
+
+    textarea {
+      min-height: 140px;
+    }
+  }
+
+  &__error {
+    font-size: 0.9rem;
+    color: #c0392b;
+    background-color: #fdecea;
+    border: 1px solid #f5c6cb;
+    border-radius: $radio-md;
+    padding: 0.6rem 1rem;
+    margin-bottom: $espacio-sm;
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  // ── ÉXITO ─────────────────────────────────────────────────────────────────
+  &__exito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: $espacio-xl $espacio-md;
+    gap: $espacio-sm;
+
+    &-icono {
+      font-size: 3.5rem;
+    }
+
+    h3 {
+      color: $verde-oliva;
+      font-size: 1.6rem;
+    }
+
+    p {
+      color: $marron;
+      max-width: 360px;
+    }
+  }
+
+  // ── PANEL DE INFORMACIÓN ──────────────────────────────────────────────────
+  &__info {
+    background-color: $marron-tierra;
+    border-radius: $radio-xl;
+    padding: $espacio-md;
+    color: rgba(255, 255, 255, 0.8);
+
+    &-titulo {
+      font-family: $fuente-titulo;
+      font-size: 1.5rem;
+      color: $blanco;
+      margin-bottom: $espacio-md;
+    }
+
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      gap: $espacio-sm;
+      margin-bottom: $espacio-sm;
+      padding-bottom: $espacio-sm;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+      &:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      span:first-child {
+        font-size: 1.4rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      strong {
+        font-size: 0.78rem;
+        font-weight: $peso-semibold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $naranja;
+      }
+
+      a,
+      span:not(:first-child) {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        transition: $transicion;
+
+        &:hover {
+          color: $naranja;
+        }
+      }
+    }
+  }
+
+  &__nota {
+    margin-top: $espacio-sm;
+    padding: $espacio-sm;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: $radio-md;
+    border-left: 3px solid $naranja;
+
+    p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-style: italic;
+      line-height: 1.65;
+    }
+  }
+}
