@@ -76,7 +76,7 @@
       border-radius: $radio-xl;
       background-image: url('/img/imgCompromiso.webp');
       background-size: cover;
-      background-position: center;
+      background-position: center bottom;
       box-shadow: $sombra-media;
 
       @media (max-width: $bp-tablet) {

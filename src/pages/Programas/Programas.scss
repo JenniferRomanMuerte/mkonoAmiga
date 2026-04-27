@@ -6,12 +6,13 @@
   // ── BANNER ────────────────────────────────────────────────────────────────
   &__banner {
     background: linear-gradient(180deg, $marron 0%, $crema 80%);
-    padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-lg;
+    padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-xs;
 
     &-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: $espacio-xl;
+      column-gap: $espacio-xl;
+      row-gap: $espacio-md;
       align-items: center;
 
       @media (max-width: $bp-tablet) {
@@ -136,6 +137,7 @@
     .titulo-seccion {
       color: $crema;
       font-size: 4rem;
+      margin-bottom: $espacio-xs;
     }
 
     .subtitulo-seccion {
