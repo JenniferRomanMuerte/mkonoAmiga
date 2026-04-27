@@ -8,16 +8,18 @@ function Footer() {
     <footer className="footer">
       <div className="contenedor footer__contenedor">
 
-        {/* Marca */}
+        {/* 1: Marca */}
         <div className="footer__marca">
-          <h3 className="footer__logo">Mkono Amiga</h3>
-          <p className="footer__tagline">
-            Potenciando habilidades, mejorando vidas y dando rienda suelta a los sueños.
-          </p>
+          <div className="footer__marca-fila">
+            <img src="/img/LogoMknoAmiga.webp" alt="Mkono Amiga" className="footer__logo" />
+            <p className="footer__tagline">
+              Potenciando habilidades, mejorando vidas y dando rienda suelta a los sueños.
+            </p>
+          </div>
           <p className="footer__lugar">Buhweju, Uganda · Madrid, España</p>
         </div>
 
-        {/* Contacto */}
+        {/* 2: Contacto */}
         <div className="footer__columna">
           <h4 className="footer__titulo-col">Contacto</h4>
           <ul>
@@ -36,7 +38,6 @@ function Footer() {
               </a>
             </li>
             <li>
-              {/* Reemplaza URL_BLOG_AQUI con la URL real del blog */}
               <a href="URL_BLOG_AQUI" target="_blank" rel="noopener noreferrer">
                 Blog
               </a>
@@ -44,7 +45,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* CTA */}
+        {/* 3: CTA */}
         <div className="footer__cta">
           <p>Tu apoyo marca la diferencia.</p>
           <Link to="/contacto?tipo=donacion" className="btn btn--primario">

@@ -48,16 +48,21 @@
   }
 
   &__logo {
-    font-family: $fuente-titulo;
-    font-size: 1.45rem;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: $blanco;
     text-decoration: none;
-    transition: $transicion;
     flex-shrink: 0;
 
-    &:hover { color: $naranja; }
+    &:hover { opacity: 0.85; }
+  }
+
+  &__logo-img {
+    height: 70px;
+    width: auto;
+    display: block;
+    transition: filter 0.3s ease;
+
+    &--blanco {
+      filter: brightness(0) invert(1);
+    }
   }
 
   // === NAVEGACIÓN (escritorio) ===

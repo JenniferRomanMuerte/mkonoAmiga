@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Navbar.scss'
 
 function Navbar() {
@@ -18,13 +18,20 @@ function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuAbierto])
 
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
+
   const cerrar = () => setMenuAbierto(false)
 
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="contenedor navbar__contenedor">
         <Link to="/" className="navbar__logo" onClick={cerrar}>
-          Mkono Amiga
+          <img
+            src="/img/LogoMknoAmiga.webp"
+            alt="Mkono Amiga"
+            className={`navbar__logo-img${isHome && !scrolled ? ' navbar__logo-img--blanco' : ''}`}
+          />
         </Link>
 
         {/* Botón hamburguesa (móvil) */}

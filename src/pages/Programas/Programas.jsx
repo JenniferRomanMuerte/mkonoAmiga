@@ -46,12 +46,6 @@ const programas = [
   },
 ]
 
-const impacto = [
-  { icono: '❤️', numero: '+100', desc: 'Niños atendidos' },
-  { icono: '➕', numero: '+90',  desc: 'Tratamientos médicos' },
-  { icono: '⚕️', numero: '18',   desc: 'Operaciones realizadas' },
-  { icono: '📚', numero: '65',   desc: 'Niños en talleres semanales' },
-]
 
 const historias = [
   {
@@ -82,11 +76,13 @@ function Programas() {
     <div className="programas">
 
       {/* ── BANNER ── */}
-      <section className="programas__banner banner-pagina">
-        <div className="contenedor">
-          <span className="etiqueta-seccion">Nuestro trabajo</span>
-          <h1>Programas e Impacto</h1>
-          <p>Seis líneas de acción para transformar vidas en Buhweju, Uganda.</p>
+      <section className="programas__banner">
+        <div className="contenedor programas__banner-grid">
+          <div className="programas__banner-texto">
+            <h1>Nuestro trabajo</h1>
+            <p>Seis líneas de acción para transformar vidas en Buhweju, Uganda.</p>
+          </div>
+          <div className="programas__banner-foto" aria-hidden="true" />
         </div>
       </section>
 
@@ -105,36 +101,10 @@ function Programas() {
         </div>
       </section>
 
-      {/* ── IMPACTO ── */}
-      <section className="programas__impacto" aria-label="Cifras de impacto">
-        <div className="contenedor">
-          <span className="etiqueta-seccion programas__impacto-etiqueta">
-            Resultados reales
-          </span>
-          <h2 className="programas__impacto-titulo">Nuestro impacto</h2>
-          <p className="programas__impacto-subtitulo">
-            Durante el último año hemos logrado resultados que cambian vidas.
-          </p>
-          <div className="programas__impacto-grid">
-            {impacto.map((item, i) => (
-              <div className="programas__impacto-item" key={i}>
-                <span aria-hidden="true">{item.icono}</span>
-                <strong>{item.numero}</strong>
-                <span>{item.desc}</span>
-              </div>
-            ))}
-          </div>
-          <blockquote className="programas__impacto-cita">
-            Más allá de los números: cada cifra representa una historia de superación,
-            una familia apoyada y una oportunidad recuperada.
-          </blockquote>
-        </div>
-      </section>
 
       {/* ── HISTORIAS ── */}
       <section className="seccion programas__historias">
         <div className="contenedor">
-          <span className="etiqueta-seccion">Historias reales</span>
           <h2 className="titulo-seccion">Historias de superación</h2>
           <p className="subtitulo-seccion">
             Cada niño tiene una historia. Estas son solo algunas de las vidas

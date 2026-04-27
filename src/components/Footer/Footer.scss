@@ -7,36 +7,44 @@
 
   &__contenedor {
     display: flex;
-    justify-content: space-around;
-    gap: $espacio-md;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $espacio-lg;
     padding-bottom: $espacio-lg;
 
-    @media (max-width: $bp-escritorio) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media (max-width: $bp-movil) {
-      grid-template-columns: 1fr;
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
       gap: $espacio-md;
     }
   }
 
+  &__marca {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    &-fila {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: $espacio-sm;
+    }
+  }
+
   &__logo {
-    font-family: $fuente-titulo;
-    font-size: 1.75rem;
-    color: $blanco;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    font-weight: $peso-bold;
-    margin-bottom: 0.75rem;
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
   }
 
   &__tagline {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color:$verde-oliva;
     line-height: 1.65;
     max-width: 260px;
-    margin-bottom: 0.5rem;
+    margin-block: 1.5rem;
   }
 
   &__lugar {
@@ -47,7 +55,7 @@
 
   &__titulo-col {
     font-family: $fuente-titulo;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: $dorado;
     margin-bottom: $espacio-sm;
     font-weight: 700;
@@ -55,6 +63,9 @@
   }
 
   &__columna {
+    flex: 1;
+    padding-left: $espacio-lg;
+
     ul {
       padding: 0;
       margin: 0;
@@ -75,12 +86,15 @@
   }
 
   &__cta {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: $espacio-sm;
+
     p {
-      color:  $verde-oliva;
-      font-size: 0.95rem;
+      color: $verde-oliva;
+      font-size: 1.2rem;
       font-style: italic;
     }
   }
