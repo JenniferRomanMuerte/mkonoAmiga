@@ -55,6 +55,16 @@ function Navbar() {
             <li><NavLink to="/programas"         onClick={cerrar}>Programas</NavLink></li>
             <li><NavLink to="/apoyanos"          onClick={cerrar}>Apóyanos</NavLink></li>
             <li><NavLink to="/contacto"          onClick={cerrar}>Contacto</NavLink></li>
+            <li>
+              <a
+                href="https://www.mkonoamiga.blogspot.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={cerrar}
+              >
+                Blog
+              </a>
+            </li>
           </ul>
   
         </nav>

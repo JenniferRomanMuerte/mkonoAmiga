@@ -9,7 +9,7 @@
     justify-content: center;
     padding: calc(#{$navbar-altura} + #{$espacio-lg}) $espacio-xxl $espacio-xs;
     gap: $espacio-md;
-    background: linear-gradient(180deg, $marron 0%, $crema 80%);
+    background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
 
     &::after {
       content: '';
@@ -334,6 +334,7 @@
 
   // ── CTA ───────────────────────────────────────────────────────────────────
   &__cta {
+    margin-top: 1rem;
     background-color: $verde-oliva;
     padding: $espacio-lg 0;
 

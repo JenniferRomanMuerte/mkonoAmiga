@@ -2,6 +2,32 @@
 
 .contacto {
 
+  // ── BANNER ────────────────────────────────────────────────────────────────
+  &__banner {
+    background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
+    padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-xs;
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: $fuente-titulo;
+      font-size: 5.4rem;
+      color: $verde-lima;
+      text-shadow: 2px 2px 8px $marron;
+      margin-bottom: $espacio-sm;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $marron;
+    }
+  }
+
   &__seccion {
     background-color: $crema;
   }
@@ -23,11 +49,11 @@
     background-color: $blanco;
     border-radius: $radio-xl;
     padding: $espacio-md;
-    box-shadow: $sombra-suave;
+    box-shadow: $sombra-fuerte;
   }
 
   &__form-titulo {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: $espacio-md;
     color: $marron-tierra;
   }
@@ -39,9 +65,9 @@
     margin-bottom: $espacio-sm;
 
     label {
-      font-size: 0.88rem;
+      font-size: 1rem;
       font-weight: $peso-semibold;
-      color: $marron-tierra;
+      color: $marron;
       letter-spacing: 0.04em;
     }
 
@@ -119,14 +145,14 @@
 
   // ── PANEL DE INFORMACIÓN ──────────────────────────────────────────────────
   &__info {
-    background-color: $marron-tierra;
+    background-color: $marron;
     border-radius: $radio-xl;
     padding: $espacio-md;
     color: rgba(255, 255, 255, 0.8);
 
     &-titulo {
       font-family: $fuente-titulo;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: $blanco;
       margin-bottom: $espacio-md;
     }
@@ -162,13 +188,13 @@
         font-weight: $peso-semibold;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: $naranja;
+        color: $verde-lima;
       }
 
       a,
       span:not(:first-child) {
         font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.75);
+        color: $blanco;
         text-decoration: none;
         transition: $transicion;
 

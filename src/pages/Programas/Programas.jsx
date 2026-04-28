@@ -1,5 +1,17 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import './Programas.scss'
+
+const fotos = [
+  '/img/carrusel/carrusel_1.webp',
+  '/img/carrusel/carrusel_2.webp',
+  '/img/carrusel/carrusel_3.webp',
+  '/img/carrusel/carrusel_4.webp',
+  '/img/carrusel/carrusel_5.webp',
+  '/img/carrusel/carrusel_6.webp',
+]
 
 const programas = [
   {
@@ -46,7 +58,6 @@ const programas = [
   },
 ]
 
-
 const historias = [
   {
     nombre: 'Rogers',
@@ -72,6 +83,19 @@ const historias = [
 ]
 
 function Programas() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ])
+
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!emblaApi) return
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
+    emblaApi.on('select', onSelect)
+    return () => emblaApi.off('select', onSelect)
+  }, [emblaApi])
+
   return (
     <div className="programas">
 
@@ -101,7 +125,6 @@ function Programas() {
         </div>
       </section>
 
-
       {/* ── HISTORIAS ── */}
       <section className="seccion programas__historias">
         <div className="contenedor">
@@ -111,15 +134,29 @@ function Programas() {
             que hemos acompañado.
           </p>
 
+          <div className="programas__galeria-embla" ref={emblaRef}>
+            <div className="programas__galeria-track">
+              {fotos.map((src, i) => (
+                <div className="programas__galeria-slide" key={i}>
+                  <img src={src} alt={`Foto del proyecto ${i + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="programas__galeria-puntos">
+            {fotos.map((_, i) => (
+              <button
+                key={i}
+                className={`programas__galeria-punto${i === selectedIndex ? ' activo' : ''}`}
+                onClick={() => emblaApi?.scrollTo(i)}
+                aria-label={`Ir a foto ${i + 1}`}
+              />
+            ))}
+          </div>
+
           <div className="programas__historias-grid">
             {historias.map((h, i) => (
               <article className={`programas__historia programas__historia--${h.mod}`} key={i}>
-                {/* Reemplazar con: <img src={`/imagenes/${h.nombre.toLowerCase()}.jpg`} alt={h.nombre} /> */}
-                <div
-                  className="programas__historia-foto"
-                  role="img"
-                  aria-label={`Foto de ${h.nombre}`}
-                />
                 <div className="programas__historia-body">
                   <h3>{h.nombre}</h3>
                   <p className="programas__historia-subtitulo">{h.subtitulo}</p>

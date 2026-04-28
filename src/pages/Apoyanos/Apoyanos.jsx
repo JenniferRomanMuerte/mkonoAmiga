@@ -44,11 +44,26 @@ function Apoyanos() {
     <div className="apoyanos">
 
       {/* ── BANNER ── */}
-      <section className="apoyanos__banner banner-pagina">
-        <div className="contenedor">
-          <span className="etiqueta-seccion">Únete a nosotros</span>
+      <section className="apoyanos__banner">
+        <div className="contenedor apoyanos__banner-inner">
           <h1>Apóyanos</h1>
           <p>Tu apoyo es fundamental para seguir cambiando vidas en Uganda.</p>
+          <div className="apoyanos__banner-cifras">
+            <div className="apoyanos__cifra">
+              <strong className="apoyanos__cifra-numero">+100</strong>
+              <span className="apoyanos__cifra-label">niños atendidos</span>
+            </div>
+            <div className="apoyanos__cifra-sep" aria-hidden="true" />
+            <div className="apoyanos__cifra">
+              <strong className="apoyanos__cifra-numero">4.000€</strong>
+              <span className="apoyanos__cifra-label">coste mensual del proyecto</span>
+            </div>
+            <div className="apoyanos__cifra-sep" aria-hidden="true" />
+            <div className="apoyanos__cifra">
+              <strong className="apoyanos__cifra-numero">6</strong>
+              <span className="apoyanos__cifra-label">programas activos</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -56,7 +71,6 @@ function Apoyanos() {
       <section className="seccion apoyanos__transparencia">
         <div className="contenedor apoyanos__transparencia-grid">
           <div className="apoyanos__transparencia-texto">
-            <span className="etiqueta-seccion">Transparencia</span>
             <h2 className="titulo-seccion">Cómo usamos los fondos</h2>
             <p>
               El coste mensual del proyecto es de aproximadamente{' '}
@@ -98,7 +112,6 @@ function Apoyanos() {
       <section className="seccion apoyanos__colabora">
         <div className="contenedor">
           <div className="apoyanos__colabora-cabecera">
-            <span className="etiqueta-seccion">Tú puedes ayudar</span>
             <h2 className="titulo-seccion">Formas de colaborar</h2>
             <p className="subtitulo-seccion">
               Hay muchas maneras de sumarte a nuestra causa. Elige la que
@@ -125,9 +138,7 @@ function Apoyanos() {
       <section className="apoyanos__consigues">
         <div className="contenedor apoyanos__consigues-inner">
           <div className="apoyanos__consigues-texto">
-            <span className="etiqueta-seccion apoyanos__consigues-etiqueta">
-              Tu impacto
-            </span>
+
             <h2>Qué consigues con tu ayuda</h2>
             <p>
               Con tu aportación, estás ofreciendo salud, educación y esperanza

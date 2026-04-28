@@ -5,7 +5,7 @@
 
   // ── BANNER ────────────────────────────────────────────────────────────────
   &__banner {
-    background: linear-gradient(180deg, $marron 0%, $crema 80%);
+    background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
     padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-xs;
 
     &-grid {
@@ -90,7 +90,7 @@
     padding: $espacio-md;
     border-radius: $radio-xl;
     background-color: $blanco;
-    box-shadow: $sombra-suave;
+    box-shadow: $sombra-media;
     transition: transform 0.26s ease, box-shadow 0.26s ease;
     border-top: 5px solid transparent;
 
@@ -128,11 +128,9 @@
 
   // ── HISTORIAS ─────────────────────────────────────────────────────────────
   &__historias {
-    background:$marron;
+    background: $marron;
 
-    .etiqueta-seccion {
-      color: $dorado;
-    }
+    .etiqueta-seccion { color: $dorado; }
 
     .titulo-seccion {
       color: $crema;
@@ -140,20 +138,81 @@
       margin-bottom: $espacio-xs;
     }
 
-    .subtitulo-seccion {
-      color: $crema;
+    .subtitulo-seccion { color: $crema; }
+  }
+
+  // Carrusel dentro de historias
+  &__galeria {
+    &-embla {
+      overflow: hidden;
+      margin-top: $espacio-lg;
     }
 
-    &-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: $espacio-md;
-      margin-top: $espacio-lg;
+    &-track {
+      display: flex;
+    }
 
-      @media (max-width: $bp-escritorio) {
-        grid-template-columns: 1fr;
-        max-width: 560px;
+    &-slide {
+      flex: 0 0 calc(100% / 3);
+      min-width: 0;
+      padding: 0 $espacio-xs;
+
+      img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center 25%;
+        display: block;
+        border-radius: $radio-xl;
+
       }
+
+      @media (max-width: $bp-tablet) {
+        flex: 0 0 50%;
+      }
+
+      @media (max-width: $bp-movil) {
+        flex: 0 0 100%;
+      }
+    }
+
+    &-puntos {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding-top: $espacio-sm;
+      padding-bottom: $espacio-lg;
+    }
+
+    &-punto {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background-color: rgba($crema, 0.4);
+      cursor: pointer;
+      transition: background-color 0.25s ease, transform 0.25s ease;
+      padding: 0;
+
+      &.activo {
+        background-color: $naranja;
+        transform: scale(1.3);
+      }
+
+      &:hover:not(.activo) {
+        background-color: rgba($crema, 0.7);
+      }
+    }
+  }
+
+  &__historias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $espacio-md;
+
+    @media (max-width: $bp-escritorio) {
+      grid-template-columns: 1fr;
+      max-width: 560px;
     }
   }
 
@@ -161,7 +220,8 @@
     border-radius: $radio-xl;
     overflow: hidden;
     background-color: $crema;
-    box-shadow: $sombra-fuerte;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.4);
+    border-top: 5px solid transparent;
     transition: transform 0.26s ease, box-shadow 0.26s ease;
 
     &:hover {
@@ -169,18 +229,8 @@
       box-shadow: $sombra-media;
     }
 
-    &-foto {
-      height: 200px;
-      width: 100%;
-    }
-
-    &--naranja .programas__historia-foto {
-      background: linear-gradient(135deg, #f39060 0%, $naranja 100%);
-    }
-
-    &--verde .programas__historia-foto {
-      background: linear-gradient(135deg, #9fcf68 0%, $verde-oliva 100%);
-    }
+    &--naranja { border-top-color: $naranja; }
+    &--verde   { border-top-color: $verde-oliva; }
 
     &-body {
       padding: $espacio-sm;

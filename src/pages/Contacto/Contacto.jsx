@@ -76,9 +76,8 @@ function Contacto() {
     <div className="contacto">
 
       {/* ── BANNER ── */}
-      <section className="contacto__banner banner-pagina">
-        <div className="contenedor">
-          <span className="etiqueta-seccion">Escríbenos</span>
+      <section className="contacto__banner">
+        <div className="contenedor contacto__banner-inner">
           <h1>Contacto</h1>
           <p>¿Quieres donar, ser voluntario o saber más? Estamos aquí.</p>
         </div>
@@ -223,8 +222,8 @@ function Contacto() {
               <div>
                 <strong>Blog</strong>
                 {/* Reemplaza URL_BLOG_AQUI con la URL real del blog */}
-                <a href="URL_BLOG_AQUI" target="_blank" rel="noopener noreferrer">
-                  Visitar el blog
+                <a href="https://www.mkonoamiga.blogspot.com" target="_blank" rel="noopener noreferrer">
+                  www.mkonoamiga.blogspot.com
                 </a>
               </div>
             </div>

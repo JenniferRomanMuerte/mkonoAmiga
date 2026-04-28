@@ -59,6 +59,7 @@
     width: auto;
     display: block;
     transition: filter 0.3s ease;
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.85));
 
     &--blanco {
       filter: brightness(0) invert(1);

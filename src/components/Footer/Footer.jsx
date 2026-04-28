@@ -38,7 +38,7 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="URL_BLOG_AQUI" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.mkonoamiga.blogspot.com" target="_blank" rel="noopener noreferrer">
                 Blog
               </a>
             </li>
