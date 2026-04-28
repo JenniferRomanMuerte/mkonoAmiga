@@ -74,13 +74,16 @@
 
     @media (max-width: $bp-tablet) {
       display: none;
-      position: fixed;
-      inset: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
       background-color: $marron-tierra;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      gap: $espacio-lg;
+      gap: 0;
+      padding: $espacio-sm 0 $espacio-md;
+      box-shadow: $sombra-media;
       z-index: 999;
 
       &--abierto {
