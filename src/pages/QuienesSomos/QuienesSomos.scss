@@ -11,6 +11,11 @@
     gap: $espacio-md;
     background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
 
+    @media (max-width: $bp-tablet) {
+      padding-left: $espacio-md;
+      padding-right: $espacio-md;
+    }
+
     &::after {
       content: '';
       width: 80%;
@@ -50,6 +55,7 @@
 
       @media (max-width: $bp-tablet) {
         grid-template-columns: 1fr;
+        gap: $espacio-md;
       }
     }
 
