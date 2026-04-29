@@ -2,6 +2,7 @@
 @use 'sass:color';
 
 .apoyanos {
+  overflow-x: hidden;
 
   // ── BANNER ────────────────────────────────────────────────────────────────
   &__banner {
@@ -14,6 +15,11 @@
       color: $verde-lima;
       text-shadow: 2px 2px 8px $marron;
       margin-bottom: $espacio-sm;
+      text-align: center;
+
+      @media (max-width: $bp-tablet) {
+        font-size: 3.8rem;
+      }
     }
 
     &-inner {
@@ -257,8 +263,7 @@
 
       @media (max-width: $bp-escritorio) {
         grid-template-columns: 1fr;
-        max-width: 540px;
-        margin: 0 auto;
+        max-width: 100%;
       }
     }
 

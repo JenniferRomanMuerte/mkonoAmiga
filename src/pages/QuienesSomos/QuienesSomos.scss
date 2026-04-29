@@ -34,6 +34,11 @@
       color: $verde-lima;
       text-shadow: 2px 2px 8px $marron;
       font-size: 5.4rem;
+      text-align: center;
+
+      @media (max-width: $bp-tablet) {
+        font-size: 3.8rem;
+      }
     }
 
     &-texto {

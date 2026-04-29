@@ -42,6 +42,11 @@
         color: $naranja;
         text-shadow: 2px 2px 8px $marron;
         margin-bottom: $espacio-sm;
+        text-align: center;
+
+        @media (max-width: $bp-tablet) {
+          font-size: 3.8rem;
+        }
       }
 
       p {

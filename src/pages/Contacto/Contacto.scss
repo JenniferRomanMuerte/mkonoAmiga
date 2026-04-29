@@ -17,9 +17,14 @@
     h1 {
       font-family: $fuente-titulo;
       font-size: 5.4rem;
-      color: $verde-lima;
+      color: $naranja;
       text-shadow: 2px 2px 8px $marron;
       margin-bottom: $espacio-sm;
+      text-align: center;
+
+      @media (max-width: $bp-tablet) {
+        font-size: 3.8rem;
+      }
     }
 
     p {
