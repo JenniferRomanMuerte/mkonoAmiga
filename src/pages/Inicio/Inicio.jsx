@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import './Inicio.scss'
 
 const estadisticas = [
-  { icono: '❤️', numero: '100', descripcion: 'Niños atendidos' },
-  { icono: '🩺', numero: '90', descripcion: 'Tratamientos médicos' },
-  { icono: '📖', numero: '65', descripcion: 'Niños en talleres semanales' },
+  { icono: '❤️', numero: '250', descripcion: 'Niños atendidos' },
+  { icono: '🩺', numero: '170', descripcion: 'Tratamientos médicos' },
+  { icono: '📖', numero: '80', descripcion: 'Niños en talleres semanales' },
 ]
 
 const areas = [
@@ -67,7 +67,7 @@ function Inicio() {
         <div className="contenedor inicio__quienes-inner">
           <h2 id="qs-titulo" className="inicio__quienes-titulo">¿Quiénes somos?</h2>
           <p className="inicio__quienes-texto">
-            Somos una ONG que trabaja para mejorar la{' '}
+            Somos una asociación que trabaja para mejorar la{' '}
             <strong>vida de niños y niñas con discapacidad en Uganda.</strong>
           </p>
 

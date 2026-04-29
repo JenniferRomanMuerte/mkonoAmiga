@@ -222,8 +222,8 @@ function Contacto() {
               <div>
                 <strong>Blog</strong>
                 {/* Reemplaza URL_BLOG_AQUI con la URL real del blog */}
-                <a href="https://www.mkonoamiga.blogspot.com" target="_blank" rel="noopener noreferrer">
-                  www.mkonoamiga.blogspot.com
+                <a href="https://mkonoamiga.blogspot.com" target="_blank" rel="noopener noreferrer">
+                  mkonoamiga.blogspot.com
                 </a>
               </div>
             </div>

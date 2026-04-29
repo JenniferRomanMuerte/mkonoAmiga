@@ -57,7 +57,7 @@ function Navbar() {
             <li><NavLink to="/contacto"          onClick={cerrar}>Contacto</NavLink></li>
             <li>
               <a
-                href="https://www.mkonoamiga.blogspot.com"
+                href="https://mkonoamiga.blogspot.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={cerrar}
