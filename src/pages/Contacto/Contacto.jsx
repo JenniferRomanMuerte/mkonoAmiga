@@ -45,7 +45,7 @@ function PanelDonacion() {
               href="https://www.teaming.net/mkonoamiga"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn--verde"
+              className="btn btn--verde btn--sm"
             >
               Ir a Teaming
             </a>
@@ -61,7 +61,7 @@ function PanelDonacion() {
               href={PAYPAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn--primario"
+              className="btn btn--primario btn--sm"
             >
               Donar con PayPal
             </a>
@@ -247,7 +247,7 @@ function Contacto() {
 
                   <button
                     type="submit"
-                    className="btn btn--primario contacto__submit"
+                    className="btn btn--primario btn--submit contacto__submit"
                     disabled={enviando}
                   >
                     {enviando ? 'Enviando…' : 'Enviar mensaje'}

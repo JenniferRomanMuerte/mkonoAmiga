@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+// Máscara SVG ondulada — solo las propiedades de máscara.
+// El pseudo-elemento (content, width, height, background-color, margin…)
+// lo define el selector que llama al mixin.
+@mixin mascara-ondulada {
+  $svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-image: $svg;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: $svg;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+// Tarjeta elevada con efecto hover
+@mixin card-elevada {
+  border-radius: $radio-xl;
+  box-shadow: $sombra-fuerte;
+  transition: transform 0.26s ease, box-shadow 0.26s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $sombra-media;
+  }
+}
+
+// Sombra en títulos de banner
+@mixin titulo-sombra($color: $marron) {
+  text-shadow: 2px 2px 8px $color;
+}
+
+// Variante de color para botones
+@mixin btn-color($color, $hover-color) {
+  background-color: $color;
+  color: $blanco;
+  border-color: $color;
+
+  &:hover {
+    background-color: $hover-color;
+    border-color: $hover-color;
+  }
+}

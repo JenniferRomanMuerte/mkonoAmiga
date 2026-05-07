@@ -1,4 +1,5 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 @use 'sass:color';
 
 .apoyanos {
@@ -13,7 +14,7 @@
       font-family: $fuente-titulo;
       font-size: 5.4rem;
       color: $verde-lima;
-      text-shadow: 2px 2px 8px $marron;
+      @include titulo-sombra;
       margin-bottom: $espacio-sm;
       text-align: center;
 
@@ -66,9 +67,9 @@
         display: none;
       }
     }
-
   }
 
+  // ── CIFRAS ────────────────────────────────────────────────────────────────
   &__cifras-seccion {
     background-color: $crema;
     padding: $espacio-lg 0 0;
@@ -81,12 +82,7 @@
       height: 5px;
       margin: 0 auto $espacio-md;
       background-color: $verde-lima;
-      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
-      -webkit-mask-size: 100% 100%;
-      -webkit-mask-repeat: no-repeat;
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
-      mask-size: 100% 100%;
-      mask-repeat: no-repeat;
+      @include mascara-ondulada;
     }
 
     &::after {
@@ -96,12 +92,7 @@
       height: 5px;
       margin: $espacio-md auto 0;
       background-color: $verde-lima;
-      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
-      -webkit-mask-size: 100% 100%;
-      -webkit-mask-repeat: no-repeat;
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 20' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,8 C1300,16 1100,6 900,14 C700,20 500,8 300,16 C150,20 50,10 0,14 Z' fill='black'/%3E%3C/svg%3E");
-      mask-size: 100% 100%;
-      mask-repeat: no-repeat;
+      @include mascara-ondulada;
     }
   }
 
@@ -169,7 +160,7 @@
         line-height: 1.75;
       }
 
-      p+p {
+      p + p {
         margin-top: $espacio-sm;
       }
     }
@@ -190,9 +181,7 @@
       margin-bottom: 0.4rem;
     }
 
-    &-icono {
-      font-size: 1.1rem;
-    }
+    &-icono { font-size: 1.1rem; }
 
     &-concepto {
       flex: 1;
@@ -237,7 +226,12 @@
   // ── FORMAS DE COLABORAR ───────────────────────────────────────────────────
   &__colabora {
     background: linear-gradient(180deg, $verde-oliva 0%, $crema 100%);
-    padding-top: $espacio-md !important;
+    // Sobreescribe el padding-top de .seccion sin necesidad de !important
+    padding-top: $espacio-md;
+
+    @media (min-width: $bp-tablet) {
+      padding-top: $espacio-md;
+    }
 
     &-cabecera {
       text-align: left;
@@ -269,17 +263,9 @@
       grid-template-columns: repeat(6, 1fr);
       gap: $espacio-md;
 
-      .apoyanos__colabora-tarjeta {
-        grid-column: span 2;
-      }
-
-      .apoyanos__colabora-tarjeta:nth-child(4) {
-        grid-column: 2 / span 2;
-      }
-
-      .apoyanos__colabora-tarjeta:nth-child(5) {
-        grid-column: 4 / span 2;
-      }
+      .apoyanos__colabora-tarjeta { grid-column: span 2; }
+      .apoyanos__colabora-tarjeta:nth-child(4) { grid-column: 2 / span 2; }
+      .apoyanos__colabora-tarjeta:nth-child(5) { grid-column: 4 / span 2; }
 
       @media (max-width: $bp-escritorio) {
         grid-template-columns: repeat(2, 1fr);
@@ -297,19 +283,12 @@
     }
 
     &-tarjeta {
+      @include card-elevada;
       display: flex;
       flex-direction: column;
       align-items: stretch;
       padding: $espacio-md;
       background-color: $crema;
-      border-radius: $radio-xl;
-      box-shadow: $sombra-fuerte;
-      transition: transform 0.26s ease, box-shadow 0.26s ease;
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: $sombra-media;
-      }
 
       p {
         font-size: 0.92rem;
@@ -344,13 +323,6 @@
       font-size: 1.8rem;
       flex-shrink: 0;
     }
-
-    // Colores de botón por tarjeta
-    .btn--naranja    { background-color: $naranja;      color: $blanco; border-color: $naranja;       &:hover { background-color: $naranja-hover; } }
-    .btn--verde-oliva{ background-color: $verde-oliva;  color: $blanco; border-color: $verde-oliva;   &:hover { background-color: $verde-hover; } }
-    .btn--lima       { background-color: $verde-lima;   color: $blanco; border-color: $verde-lima;    &:hover { background-color: color.adjust($verde-lima, $lightness: -8%); } }
-    .btn--tierra     { background-color: $marron-tierra;color: $blanco; border-color: $marron-tierra; &:hover { background-color: color.adjust($marron-tierra, $lightness: -8%); } }
-    .btn--dorado     { background-color: $dorado;       color: $blanco; border-color: $dorado;        &:hover { background-color: $dorado-hover; } }
   }
 
   // ── QUÉ CONSIGUES ─────────────────────────────────────────────────────────
@@ -370,19 +342,9 @@
       }
     }
 
-    &-etiqueta {
-      color: rgba(255, 255, 255, 0.65) !important;
-    }
-
     &-texto {
-      h2 {
-        color: $blanco;
-        margin-bottom: $espacio-sm;
-      }
-
-      p {
-        color: rgba(255, 255, 255, 0.82);
-      }
+      h2 { color: $blanco; margin-bottom: $espacio-sm; }
+      p  { color: $blanco-82; }
     }
 
     &-cta {
@@ -396,7 +358,7 @@
         font-family: $fuente-titulo;
         font-size: 1.4rem;
         font-style: italic;
-        color: rgba(255, 255, 255, 0.85);
+        color: $blanco-85;
       }
     }
   }

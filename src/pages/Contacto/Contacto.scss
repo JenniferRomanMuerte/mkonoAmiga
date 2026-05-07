@@ -109,19 +109,16 @@
 
   &__error {
     font-size: 0.9rem;
-    color: #c0392b;
-    background-color: #fdecea;
-    border: 1px solid #f5c6cb;
+    color: $error-color;
+    background-color: $error-bg;
+    border: 1px solid $error-border;
     border-radius: $radio-md;
     padding: 0.6rem 1rem;
     margin-bottom: $espacio-sm;
   }
 
   &__submit {
-    width: 100%;
     margin-top: 0.5rem;
-    font-size: 1rem !important;
-    padding: 1rem !important;
   }
 
   // ── ÉXITO ─────────────────────────────────────────────────────────────────
@@ -133,19 +130,11 @@
     padding: $espacio-xl $espacio-md;
     gap: $espacio-sm;
 
-    &-icono {
-      font-size: 3.5rem;
-    }
+    &-icono { font-size: 3.5rem; }
 
-    h3 {
-      color: $verde-oliva;
-      font-size: 1.6rem;
-    }
+    h3 { color: $verde-oliva; font-size: 1.6rem; }
 
-    p {
-      color: $marron;
-      max-width: 360px;
-    }
+    p { color: $marron; max-width: 360px; }
   }
 
   // ── PANEL DE INFORMACIÓN ──────────────────────────────────────────────────
@@ -153,7 +142,7 @@
     background-color: $marron;
     border-radius: $radio-xl;
     padding: $espacio-md;
-    color: rgba(255, 255, 255, 0.8);
+    color: $blanco-82;
 
     &-titulo {
       font-family: $fuente-titulo;
@@ -168,7 +157,7 @@
       gap: $espacio-sm;
       margin-bottom: $espacio-sm;
       padding-bottom: $espacio-sm;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid $blanco-08;
 
       &:last-of-type {
         border-bottom: none;
@@ -203,10 +192,23 @@
         text-decoration: none;
         transition: $transicion;
 
-        &:hover {
-          color: $naranja;
-        }
+        &:hover { color: $naranja; }
       }
+    }
+  }
+
+  &__nota {
+    margin-top: $espacio-sm;
+    padding: $espacio-sm;
+    background-color: $blanco-06;
+    border-radius: $radio-md;
+    border-left: 3px solid $naranja;
+
+    p {
+      font-size: 0.9rem;
+      color: $blanco-65;
+      font-style: italic;
+      line-height: 1.65;
     }
   }
 
@@ -255,8 +257,6 @@
 
     .btn {
       align-self: flex-end;
-      font-size: 0.7rem !important;
-      padding: 0.3rem 0.85rem !important;
     }
   }
 
@@ -275,21 +275,6 @@
     @media (max-width: $bp-movil) {
       font-size: 0.88rem;
       letter-spacing: 0.02em;
-    }
-  }
-
-  &__nota {
-    margin-top: $espacio-sm;
-    padding: $espacio-sm;
-    background-color: rgba(255, 255, 255, 0.06);
-    border-radius: $radio-md;
-    border-left: 3px solid $naranja;
-
-    p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.65);
-      font-style: italic;
-      line-height: 1.65;
     }
   }
 }

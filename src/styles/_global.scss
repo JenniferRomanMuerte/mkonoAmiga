@@ -1,4 +1,6 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+@use 'sass:color';
 
 // === RESET BASE ===
 *,
@@ -175,6 +177,25 @@ strong {
     }
   }
 
+  // Variantes de color
+  &--naranja     { @include btn-color($naranja,      $naranja-hover); }
+  &--verde-oliva { @include btn-color($verde-oliva,  $verde-hover); }
+  &--lima        { @include btn-color($verde-lima,   color.adjust($verde-lima, $lightness: -8%)); }
+  &--tierra      { @include btn-color($marron-tierra, color.adjust($marron-tierra, $lightness: -8%)); }
+  &--dorado      { @include btn-color($dorado,       $dorado-hover); }
+
+  // Tamaños
+  &--sm {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.85rem;
+  }
+
+  &--submit {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
   &:disabled {
     opacity: 0.65;
     cursor: not-allowed;
@@ -192,6 +213,10 @@ strong {
   color: $naranja;
   display: block;
   margin-bottom: $espacio-xs;
+
+  &--clara {
+    color: $blanco-65;
+  }
 }
 
 .titulo-seccion {

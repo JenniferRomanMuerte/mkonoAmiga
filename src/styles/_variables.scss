@@ -65,3 +65,21 @@ $bp-grande: 1280px;
 
 // === TRANSICIONES ===
 $transicion: all 0.3s ease;
+
+// === COLORES SEMÁNTICOS ===
+// Error / validación
+$error-color:  #c0392b;
+$error-bg:     #fdecea;
+$error-border: #f5c6cb;
+
+// Marrón oscuro (dónde trabajamos, overlays)
+$marron-oscuro: #3a2e28;
+
+// Blancos con opacidad (para secciones oscuras)
+$blanco-06: rgba(255, 255, 255, 0.06);
+$blanco-08: rgba(255, 255, 255, 0.08);
+$blanco-35: rgba(255, 255, 255, 0.35);
+$blanco-65: rgba(255, 255, 255, 0.65);
+$blanco-75: rgba(255, 255, 255, 0.75);
+$blanco-82: rgba(255, 255, 255, 0.82);
+$blanco-85: rgba(255, 255, 255, 0.85);
