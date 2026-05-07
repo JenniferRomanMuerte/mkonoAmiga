@@ -210,6 +210,74 @@
     }
   }
 
+  // ── PANEL DONACIÓN ────────────────────────────────────────────────────────
+  &__donacion-lista {
+    display: flex;
+    flex-direction: column;
+    gap: $espacio-sm;
+  }
+
+  &__donacion-opcion {
+    display: flex;
+    align-items: flex-start;
+    gap: $espacio-sm;
+    padding: $espacio-sm;
+    border-radius: $radio-md;
+    background-color: $crema;
+    border-left: 4px solid $naranja;
+    min-width: 0;
+
+    span:first-child {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+      min-width: 0;
+    }
+
+    strong {
+      font-size: 1.05rem;
+      font-weight: $peso-semibold;
+      color: $marron-tierra;
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: $marron;
+      line-height: 1.5;
+    }
+
+    .btn {
+      align-self: flex-end;
+      font-size: 0.7rem !important;
+      padding: 0.3rem 0.85rem !important;
+    }
+  }
+
+  &__codigo {
+    font-family: monospace;
+    font-size: 1.05rem;
+    font-weight: $peso-bold;
+    color: $verde-oliva;
+    background-color: rgba($verde-oliva, 0.1);
+    padding: 0.25rem 0.6rem;
+    border-radius: $radio-sm;
+    letter-spacing: 0.06em;
+    word-break: break-all;
+    overflow-wrap: break-word;
+
+    @media (max-width: $bp-movil) {
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+  }
+
   &__nota {
     margin-top: $espacio-sm;
     padding: $espacio-sm;
