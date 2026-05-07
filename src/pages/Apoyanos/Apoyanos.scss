@@ -7,7 +7,7 @@
 
   // ── BANNER ────────────────────────────────────────────────────────────────
   &__banner {
-    background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
+    @include banner-interior;
     padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-md;
 
     h1 {

@@ -6,7 +6,7 @@
 
   // ── BANNER ────────────────────────────────────────────────────────────────
   &__banner {
-    background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
+    @include banner-interior;
     padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-xs;
 
     &-grid {
@@ -210,7 +210,7 @@
     padding: $espacio-xl $espacio-lg;
 
     p {
-      font-family: 'Nothing You Could Do', cursive;
+      font-family: $fuente-manuscrita;
       font-size: 1.8rem;
       line-height: 1.75;
       color: $marron;
@@ -267,19 +267,6 @@
   // ── CTA ───────────────────────────────────────────────────────────────────
   &__cta {
     margin-top: 1rem;
-    background-color: $verde-oliva;
-    padding: $espacio-lg 0;
-
-    &-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: $espacio-sm;
-
-      h2 { color: $blanco; }
-      p  { color: $blanco-82; max-width: 460px; }
-    }
   }
 }
 

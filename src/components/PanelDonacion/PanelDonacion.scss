@@ -1,0 +1,79 @@
+@use '../../styles/variables' as *;
+
+.panel-donacion {
+  background-color: $blanco;
+  border-radius: $radio-xl;
+  padding: $espacio-md;
+  box-shadow: $sombra-fuerte;
+
+  &__titulo {
+    font-size: 1.8rem;
+    margin-bottom: $espacio-md;
+    color: $marron-tierra;
+  }
+
+  &__lista {
+    display: flex;
+    flex-direction: column;
+    gap: $espacio-sm;
+  }
+
+  &__opcion {
+    display: flex;
+    align-items: flex-start;
+    gap: $espacio-sm;
+    padding: $espacio-sm;
+    border-radius: $radio-md;
+    background-color: $crema;
+    border-left: 4px solid $naranja;
+    min-width: 0;
+
+    span:first-child {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+      min-width: 0;
+    }
+
+    strong {
+      font-size: 1.05rem;
+      font-weight: $peso-semibold;
+      color: $marron-tierra;
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: $marron;
+      line-height: 1.5;
+    }
+
+    .btn {
+      align-self: flex-end;
+    }
+  }
+
+  &__codigo {
+    font-family: monospace;
+    font-size: 1.05rem;
+    font-weight: $peso-bold;
+    color: $verde-oliva;
+    background-color: rgba($verde-oliva, 0.1);
+    padding: 0.25rem 0.6rem;
+    border-radius: $radio-sm;
+    letter-spacing: 0.06em;
+    word-break: break-all;
+    overflow-wrap: break-word;
+
+    @media (max-width: $bp-movil) {
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+  }
+}

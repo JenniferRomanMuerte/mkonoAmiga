@@ -1,62 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import { fotos, programas } from '../../data/programasData'
+import CTADonacion from '../../components/CTADonacion/CTADonacion'
 import './Programas.scss'
-
-const fotos = [
-  '/img/carrusel/carrusel_1.webp',
-  '/img/carrusel/carrusel_2.webp',
-  '/img/carrusel/carrusel_3.webp',
-  '/img/carrusel/carrusel_4.webp',
-  '/img/carrusel/carrusel_5.webp',
-  '/img/carrusel/carrusel_6.webp',
-]
-
-const programas = [
-  {
-    icono: '🏥',
-    titulo: 'Atención médica y rehabilitación',
-    descripcion:
-      'Ofrecemos sesiones de fisioterapia, estimulación temprana y tratamientos médicos para mejorar la salud y autonomía de los niños.',
-    mod: 'verde',
-  },
-  {
-    icono: '⚕️',
-    titulo: 'Cirugías médicas',
-    descripcion:
-      'Facilitamos el acceso a operaciones necesarias mediante colaboración con hospitales locales.',
-    mod: 'naranja',
-  },
-  {
-    icono: '📚',
-    titulo: 'Educación inclusiva',
-    descripcion:
-      'Acompañamos a los niños en su proceso educativo, proporcionando materiales adaptados y apoyo escolar.',
-    mod: 'verde',
-  },
-  {
-    icono: '🍽️',
-    titulo: 'Unidad de desnutrición infantil',
-    descripcion:
-      'Trabajamos para combatir la malnutrición mediante atención médica, alimentación y seguimiento del desarrollo infantil.',
-    mod: 'naranja',
-  },
-  {
-    icono: '👨‍👩‍👧',
-    titulo: 'Apoyo a familias',
-    descripcion:
-      'Formamos y acompañamos a las familias en cuidados, nutrición y salud.',
-    mod: 'verde',
-  },
-  {
-    icono: '🤝',
-    titulo: 'Sensibilización comunitaria',
-    descripcion:
-      'Promovemos la inclusión y luchamos contra el estigma asociado a la discapacidad.',
-    mod: 'naranja',
-  },
-]
 
 
 function Programas() {
@@ -151,15 +98,11 @@ function Programas() {
       </div>
 
       {/* ── CTA ── */}
-      <section className="programas__cta">
-        <div className="contenedor programas__cta-inner">
-          <h2>Ayúdanos a seguir</h2>
-          <p>Con tu apoyo podemos llegar a más niños y ampliar nuestros programas.</p>
-          <Link to="/contacto?tipo=donacion" className="btn btn--primario">
-            Donar ahora
-          </Link>
-        </div>
-      </section>
+      <CTADonacion
+        className="programas__cta"
+        heading="Ayúdanos a seguir"
+        description="Con tu apoyo podemos llegar a más niños y ampliar nuestros programas."
+      />
 
     </div>
   )

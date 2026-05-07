@@ -1,17 +1,7 @@
 import { Link } from 'react-router-dom'
+import { estadisticas, areas } from '../../data/inicioData'
+import CTADonacion from '../../components/CTADonacion/CTADonacion'
 import './Inicio.scss'
-
-const estadisticas = [
-  { icono: '❤️', numero: '250', descripcion: 'Niños atendidos' },
-  { icono: '🩺', numero: '170', descripcion: 'Tratamientos médicos' },
-  { icono: '📖', numero: '80', descripcion: 'Niños en talleres semanales' },
-]
-
-const areas = [
-  { titulo: 'Atención Médica', mod: 'verde' },
-  { titulo: 'Educación Inclusiva', mod: 'naranja' },
-  { titulo: 'Apoyo Familiar', mod: 'marron' },
-]
 
 function Inicio() {
   return (
@@ -87,18 +77,10 @@ function Inicio() {
       </section>
 
       {/* ── CTA FINAL ── */}
-      <section className="inicio__cta" aria-label="Llamada a la acción">
-        <div className="contenedor inicio__cta-inner">
-          <h2>Tu ayuda cambia vidas</h2>
-          <p>
-            Con tu aportación, estás ofreciendo salud, educación y esperanza
-            a niños que lo necesitan.
-          </p>
-          <Link to="/contacto?tipo=donacion" className="btn btn--primario">
-            Donar ahora
-          </Link>
-        </div>
-      </section>
+      <CTADonacion
+        heading="Tu ayuda cambia vidas"
+        description="Con tu aportación, estás ofreciendo salud, educación y esperanza a niños que lo necesitan."
+      />
 
     </div>
   )

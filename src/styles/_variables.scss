@@ -25,8 +25,10 @@ $dorado-hover: #A88020;
 // === TIPOGRAFÍA ===
 // Primaria: Caveat Brush — manuscrita, cálida y cercana (solo peso 400)
 // Secundaria: Mulish — simple, legible y clara
-$fuente-titulo: 'Caveat Brush', cursive;
-$fuente-cuerpo: 'Mulish', 'Helvetica Neue', sans-serif;
+// Terciaria: Nothing You Could Do — caligrafía para el manifiesto de historias
+$fuente-titulo:      'Caveat Brush', cursive;
+$fuente-cuerpo:      'Mulish', 'Helvetica Neue', sans-serif;
+$fuente-manuscrita:  'Nothing You Could Do', cursive;
 
 $peso-regular: 400;
 $peso-medio: 500;
@@ -53,15 +55,13 @@ $radio-xl: 24px;
 $radio-pill: 50px;
 
 // === SOMBRAS ===
-$sombra-suave: 0 2px 12px rgba(42, 37, 32, 0.08);
-$sombra-media: 0 4px 24px rgba(42, 37, 32, 0.14);
+$sombra-media:  0 4px 24px rgba(42, 37, 32, 0.14);
 $sombra-fuerte: 0 6px 35px rgba(42, 37, 32, 0.82);
 
 // === BREAKPOINTS ===
-$bp-movil: 576px;
-$bp-tablet: 768px;
+$bp-movil:     576px;
+$bp-tablet:    768px;
 $bp-escritorio: 1024px;
-$bp-grande: 1280px;
 
 // === TRANSICIONES ===
 $transicion: all 0.3s ease;
@@ -83,3 +83,7 @@ $blanco-65: rgba(255, 255, 255, 0.65);
 $blanco-75: rgba(255, 255, 255, 0.75);
 $blanco-82: rgba(255, 255, 255, 0.82);
 $blanco-85: rgba(255, 255, 255, 0.85);
+
+// === GRADIENTES REUTILIZABLES ===
+// No se puede usar como variable SCSS directamente en background shorthand,
+// pero se usa como referencia de diseño y en el mixin banner-interior.

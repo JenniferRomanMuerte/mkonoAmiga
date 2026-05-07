@@ -271,28 +271,4 @@
     }
   }
 
-  // ── CTA FINAL ─────────────────────────────────────────────────────────────
-  &__cta {
-    background-color: $verde-oliva;
-    padding: $espacio-lg 0;
-
-    &-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: $espacio-md;
-
-      h2 {
-        color: $blanco;
-        font-size: clamp(2.2rem, 6vw, 3.8rem);
-      }
-
-      p {
-        color: $blanco-82;
-        max-width: 480px;
-        font-size: 1.3rem;
-      }
-    }
-  }
 }

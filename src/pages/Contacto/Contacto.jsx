@@ -1,77 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { ASUNTOS } from '../../data/contactoData'
+import PanelDonacion from '../../components/PanelDonacion/PanelDonacion'
 import './Contacto.scss'
-
-const MSG_DONACION =
-  'Hola, me gustaría hacer una donación a Mkono Amiga. ¿Podéis indicarme cómo proceder?'
-
-const ASUNTOS = {
-  donacion:   { asunto: 'Donación', mensaje: MSG_DONACION },
-  voluntario: { asunto: 'Quiero ser voluntario', mensaje: '' },
-  empresa:    { asunto: 'Colaboración empresarial', mensaje: '' },
-}
-
-const PAYPAL_URL =
-  'https://www.paypal.com/ncp/payment/43WAT27ADHFVQ?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaARmsfJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafbL7je_K3jV-Ce5r29as8SwSO6meiScDZxNojEd3STW9SztMeDHtDC107NYw_aem_fHWXP_Ieq51FBXloDJJVlg'
-
-function PanelDonacion() {
-  return (
-    <div className="contacto__formulario-wrapper">
-      <h2 className="contacto__form-titulo">Cómo realizar tu donación</h2>
-      <div className="contacto__donacion-lista">
-
-        <div className="contacto__donacion-opcion">
-          <span aria-hidden="true">🏦</span>
-          <div>
-            <strong>Transferencia bancaria</strong>
-            <code className="contacto__codigo">ES5900493140952814234364</code>
-          </div>
-        </div>
-
-        <div className="contacto__donacion-opcion">
-          <span aria-hidden="true">📱</span>
-          <div>
-            <strong>Bizum</strong>
-            <code className="contacto__codigo">13299</code>
-          </div>
-        </div>
-
-        <div className="contacto__donacion-opcion">
-          <span aria-hidden="true">🤝</span>
-          <div>
-            <strong>Teaming</strong>
-            <p>Por solo 1€ al mes</p>
-            <a
-              href="https://www.teaming.net/mkonoamiga"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn--verde btn--sm"
-            >
-              Ir a Teaming
-            </a>
-          </div>
-        </div>
-
-        <div className="contacto__donacion-opcion">
-          <span aria-hidden="true">💳</span>
-          <div>
-            <strong>PayPal</strong>
-            <p>Haz tu donativo desde cualquier parte del mundo de forma rápida y segura</p>
-            <a
-              href={PAYPAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn--primario btn--sm"
-            >
-              Donar con PayPal
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  )
-}
 
 function Contacto() {
   const [searchParams] = useSearchParams()
@@ -117,7 +48,7 @@ function Contacto() {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'TU_ACCESS_KEY_AQUI',
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
           name:    form.nombre,
           email:   form.email,
           subject: form.asunto,

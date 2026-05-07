@@ -10,7 +10,7 @@
     justify-content: center;
     padding: calc(#{$navbar-altura} + #{$espacio-lg}) $espacio-xxl $espacio-xs;
     gap: $espacio-md;
-    background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
+    @include banner-interior;
 
     @media (max-width: $bp-tablet) {
       padding-left: $espacio-md;

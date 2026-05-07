@@ -26,6 +26,11 @@
   }
 }
 
+// Fondo degradado de banners interiores (marrón → crema)
+@mixin banner-interior {
+  background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
+}
+
 // Sombra en títulos de banner
 @mixin titulo-sombra($color: $marron) {
   text-shadow: 2px 2px 8px $color;
