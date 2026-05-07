@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom'
 import { estadisticas, areas } from '../../data/inicioData'
 import CTADonacion from '../../components/CTADonacion/CTADonacion'
+import SEO from '../../components/SEO/SEO'
 import './Inicio.scss'
 
 function Inicio() {
   return (
     <div className="inicio">
+
+      <SEO
+        title="Inicio"
+        description="ONG española que trabaja en Uganda para mejorar la vida de niños y niñas con necesidades especiales mediante atención médica, educación y apoyo familiar."
+        path="/"
+      />
 
       {/* ── HERO ── */}
       <section className="inicio__hero" aria-label="Portada">

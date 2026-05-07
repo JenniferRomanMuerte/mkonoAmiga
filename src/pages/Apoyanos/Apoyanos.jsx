@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom'
 import { fondos, formas } from '../../data/apoyanosData'
+import SEO from '../../components/SEO/SEO'
 import './Apoyanos.scss'
 
 function Apoyanos() {
   return (
     <div className="apoyanos">
+
+      <SEO
+        title="Apóyanos"
+        description="Colabora con Mkono Amiga: donaciones económicas, voluntariado internacional, hazte socio o colabora desde tu empresa. Tu ayuda cambia vidas en Uganda."
+        path="/apoyanos"
+      />
 
       {/* ── BANNER ── */}
       <section className="apoyanos__banner">

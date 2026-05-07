@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ASUNTOS } from '../../data/contactoData'
 import PanelDonacion from '../../components/PanelDonacion/PanelDonacion'
+import SEO from '../../components/SEO/SEO'
 import './Contacto.scss'
 
 function Contacto() {
@@ -73,6 +74,15 @@ function Contacto() {
 
   return (
     <div className="contacto">
+
+      <SEO
+        title={esDonacion ? 'Donaciones económicas' : 'Contacto'}
+        description={esDonacion
+          ? 'Realiza tu donación a Mkono Amiga por transferencia, Bizum, Teaming o PayPal. Los donativos desgravan hasta un 80%.'
+          : 'Contacta con Mkono Amiga para donar, ser voluntario, hacerte socio o colaborar con nuestra ONG en Uganda.'
+        }
+        path="/contacto"
+      />
 
       {/* ── BANNER ── */}
       <section className="contacto__banner">

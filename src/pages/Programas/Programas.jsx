@@ -3,6 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { fotos, programas } from '../../data/programasData'
 import CTADonacion from '../../components/CTADonacion/CTADonacion'
+import SEO from '../../components/SEO/SEO'
 import './Programas.scss'
 
 
@@ -22,6 +23,12 @@ function Programas() {
 
   return (
     <div className="programas">
+
+      <SEO
+        title="Nuestros programas"
+        description="Seis programas de acción en Uganda: atención médica y rehabilitación, cirugías, educación inclusiva, nutrición infantil, apoyo a familias y sensibilización comunitaria."
+        path="/programas"
+      />
 
       {/* ── BANNER ── */}
       <section className="programas__banner">

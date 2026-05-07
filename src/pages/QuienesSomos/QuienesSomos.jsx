@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom'
 import { valores, equipo } from '../../data/quienesSomosData'
+import SEO from '../../components/SEO/SEO'
 import './QuienesSomos.scss'
 
 function QuienesSomos() {
   return (
     <div className="qs">
+
+      <SEO
+        title="Quiénes somos"
+        description="Mkono Amiga es una asociación sin ánimo de lucro que trabaja en el distrito de Buhweju, Uganda, por los derechos y la dignidad de niños y niñas con discapacidad."
+        path="/quienes-somos"
+      />
 
       {/* ── BANNER ── */}
       <section className="qs__banner">
