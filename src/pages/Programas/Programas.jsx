@@ -58,29 +58,6 @@ const programas = [
   },
 ]
 
-const historias = [
-  {
-    nombre: 'Rogers',
-    subtitulo: 'Una segunda oportunidad de vida',
-    texto:
-      'Tras años de sufrimiento, Rogers fue operado con éxito gracias a la intervención de Mkono Amiga. Hoy lleva una vida normal, llena de posibilidades que antes parecían imposibles.',
-    mod: 'naranja',
-  },
-  {
-    nombre: 'Elizabeth',
-    subtitulo: 'Superando lo imposible',
-    texto:
-      'Elizabeth superó un tumor cerebral gracias a la intervención médica gestionada por la asociación. Su recuperación es un testimonio del impacto que los recursos y el apoyo pueden tener.',
-    mod: 'verde',
-  },
-  {
-    nombre: 'Antony y Triphani',
-    subtitulo: 'Autonomía y dignidad',
-    texto:
-      'Gracias a la fisioterapia continuada y a sus sillas de ruedas, Antony y Triphani han ganado autonomía y calidad de vida. Cada sesión es un paso más hacia su independencia.',
-    mod: 'naranja',
-  },
-]
 
 function Programas() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
@@ -116,8 +93,10 @@ function Programas() {
           <div className="programas__grid">
             {programas.map((p, i) => (
               <article className={`programas__tarjeta programas__tarjeta--${p.mod}`} key={i}>
+
                 <span className="programas__tarjeta-icono" aria-hidden="true">{p.icono}</span>
                 <h3>{p.titulo}</h3>
+
                 <p>{p.descripcion}</p>
               </article>
             ))}
@@ -154,19 +133,22 @@ function Programas() {
             ))}
           </div>
 
-          <div className="programas__historias-grid">
-            {historias.map((h, i) => (
-              <article className={`programas__historia programas__historia--${h.mod}`} key={i}>
-                <div className="programas__historia-body">
-                  <h3>{h.nombre}</h3>
-                  <p className="programas__historia-subtitulo">{h.subtitulo}</p>
-                  <p>{h.texto}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
+
       </section>
+
+      {/* ── TEXTO ── */}
+      <div className="programas__historias-manifiesto">
+        <div className="programas__historias-dos-cols">
+          <p>En Mkono Amiga creemos que cada niño y niña tiene una historia que merece ser escuchada. No son solo números, ni casos, ni estadísticas. Son miradas, sueños, miedos, risas… son vidas que están creciendo y buscando su lugar en el mundo.</p>
+          <p>Dar visibilidad a sus historias es darles voz. Es recordar que detrás de cada proyecto hay nombres, hay caminos difíciles y también una enorme capacidad de superación. Cuando compartimos sus realidades, no lo hacemos desde la pena, sino desde el respeto, la dignidad y la esperanza.</p>
+        </div>
+        <p>Las redes sociales pueden ser mucho más que un escaparate: pueden ser un puente. Un lugar donde conectar, donde generar empatía, donde transformar la indiferencia en compromiso.Contar sus historias es sembrar conciencia. Escucharlas es empezar a cambiar las cosas.</p>
+        <p className="historias-frase">Sigue estas historias a través de Instagram</p>
+        <a href="https://www.instagram.com/mkonoamiga" target="_blank" rel="noopener noreferrer">
+          @mkonoamiga
+        </a>
+      </div>
 
       {/* ── CTA ── */}
       <section className="programas__cta">

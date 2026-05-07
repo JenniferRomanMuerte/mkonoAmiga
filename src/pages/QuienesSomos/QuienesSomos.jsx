@@ -61,7 +61,7 @@ function QuienesSomos() {
               <h3>Nuestra misión</h3>
             </div>
             <p>
-              Mejorar la calidad de vida de niños y niñas con discapacidad mediante
+              Mejorar la calidad de vida de niños y niñas con necesidades especiales mediante
               atención integral, educación inclusiva y apoyo a sus familias.
             </p>
           </div>

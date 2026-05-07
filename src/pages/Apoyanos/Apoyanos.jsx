@@ -21,7 +21,7 @@ const formas = [
   },
   {
     icono: '✈️',
-    titulo: 'Voluntariado',
+    titulo: 'Voluntariado internacional',
     descripcion:
       'Si quieres vivir una experiencia transformadora y contribuir con tu tiempo y conocimientos, contáctanos.',
     cta: 'Apuntarme como voluntario',
