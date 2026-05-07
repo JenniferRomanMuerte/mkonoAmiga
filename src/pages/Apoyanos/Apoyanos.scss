@@ -230,47 +230,76 @@
     svg {
       display: block;
       width: 100%;
-      height: 120px;
+      height: 80px;
     }
   }
 
   // ── FORMAS DE COLABORAR ───────────────────────────────────────────────────
   &__colabora {
     background: linear-gradient(180deg, $verde-oliva 0%, $crema 100%);
+    padding-top: $espacio-md !important;
 
     &-cabecera {
       text-align: left;
       margin-bottom: $espacio-md;
 
       .titulo-seccion {
-        color: $marron;
-        text-shadow: 2px 2px 5px $crema;
+        color: $naranja;
+        text-shadow: 1px 0.5px 5px $marron;
         font-size: 4rem;
         margin-bottom: $espacio-sm;
+
+        @media (max-width: $bp-movil) {
+          font-size: 2.6rem;
+        }
       }
 
       .subtitulo-seccion {
         font-size: 1.4rem;
         color: $crema;
 
+        @media (max-width: $bp-movil) {
+          font-size: 1.1rem;
+        }
       }
     }
 
     &-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: $espacio-md;
 
+      .apoyanos__colabora-tarjeta {
+        grid-column: span 2;
+      }
+
+      .apoyanos__colabora-tarjeta:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
+
+      .apoyanos__colabora-tarjeta:nth-child(5) {
+        grid-column: 4 / span 2;
+      }
+
       @media (max-width: $bp-escritorio) {
+        grid-template-columns: repeat(2, 1fr);
+
+        .apoyanos__colabora-tarjeta,
+        .apoyanos__colabora-tarjeta:nth-child(4),
+        .apoyanos__colabora-tarjeta:nth-child(5) {
+          grid-column: span 1;
+        }
+      }
+
+      @media (max-width: $bp-movil) {
         grid-template-columns: 1fr;
-        max-width: 100%;
       }
     }
 
     &-tarjeta {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
       padding: $espacio-md;
       background-color: $crema;
       border-radius: $radio-xl;
@@ -282,24 +311,46 @@
         box-shadow: $sombra-media;
       }
 
-      h3 {
-        font-size: 1.4rem;
-        margin: $espacio-xs 0;
-        color: $marron-tierra;
-      }
-
       p {
         font-size: 0.92rem;
+        text-align: justify;
         color: $marron;
         flex: 1;
-        margin-bottom: $espacio-sm;
+        margin-bottom: $espacio-md;
+      }
+
+      .btn {
+        align-self: center;
+        font-size: 0.82rem;
+        padding: 0.45rem 1.1rem;
+      }
+    }
+
+    &-tarjeta-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: $espacio-sm;
+
+      h3 {
+        font-size: 1.35rem;
+        margin: 0;
+        color: $marron-tierra;
+        text-align: center;
       }
     }
 
     &-icono {
-      font-size: 2.5rem;
-      margin-bottom: 0.25rem;
+      font-size: 1.8rem;
+      flex-shrink: 0;
     }
+
+    // Colores de botón por tarjeta
+    .btn--naranja    { background-color: $naranja;      color: $blanco; border-color: $naranja;       &:hover { background-color: $naranja-hover; } }
+    .btn--verde-oliva{ background-color: $verde-oliva;  color: $blanco; border-color: $verde-oliva;   &:hover { background-color: $verde-hover; } }
+    .btn--lima       { background-color: $verde-lima;   color: $blanco; border-color: $verde-lima;    &:hover { background-color: color.adjust($verde-lima, $lightness: -8%); } }
+    .btn--tierra     { background-color: $marron-tierra;color: $blanco; border-color: $marron-tierra; &:hover { background-color: color.adjust($marron-tierra, $lightness: -8%); } }
+    .btn--dorado     { background-color: $dorado;       color: $blanco; border-color: $dorado;        &:hover { background-color: $dorado-hover; } }
   }
 
   // ── QUÉ CONSIGUES ─────────────────────────────────────────────────────────

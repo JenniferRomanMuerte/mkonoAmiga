@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import './Contacto.scss'
 
-// Mensaje que se autocompleta cuando se llega desde un botón "Donar"
 const MSG_DONACION =
   'Hola, me gustaría hacer una donación a Mkono Amiga. ¿Podéis indicarme cómo proceder?'
+
+const ASUNTOS = {
+  donacion:   { asunto: 'Donación', mensaje: MSG_DONACION },
+  voluntario: { asunto: 'Quiero ser voluntario', mensaje: '' },
+  empresa:    { asunto: 'Colaboración empresarial', mensaje: '' },
+}
 
 function Contacto() {
   const [searchParams] = useSearchParams()
@@ -19,13 +24,14 @@ function Contacto() {
   const [enviado,  setEnviado]  = useState(false)
   const [error,    setError]    = useState('')
 
-  // Rellena el formulario automáticamente cuando ?tipo=donacion
   useEffect(() => {
-    if (searchParams.get('tipo') === 'donacion') {
+    const tipo = searchParams.get('tipo')
+    const preset = ASUNTOS[tipo]
+    if (preset) {
       setForm(prev => ({
         ...prev,
-        asunto:  'Donación',
-        mensaje: MSG_DONACION,
+        asunto:  preset.asunto,
+        mensaje: preset.mensaje || prev.mensaje,
       }))
     }
   }, [searchParams])
