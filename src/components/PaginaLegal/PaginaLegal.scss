@@ -1,0 +1,87 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.pagina-legal {
+
+  &__banner {
+    @include banner-interior;
+    padding: calc(#{$navbar-altura} + #{$espacio-lg}) 0 $espacio-md;
+    text-align: center;
+
+    h1 {
+      font-family: $fuente-titulo;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      color: $naranja;
+      text-shadow: 2px 2px 8px $marron;
+    }
+  }
+
+  &__contenido {
+    background-color: $crema;
+  }
+
+  &__texto {
+    max-width: 780px;
+    margin: 0 auto;
+
+    h2 {
+      font-family: $fuente-titulo;
+      font-size: 1.55rem;
+      color: $marron-tierra;
+      margin-top: $espacio-md;
+      margin-bottom: $espacio-xs;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid $naranja;
+    }
+
+    p {
+      font-size: 0.97rem;
+      color: $marron;
+      line-height: 1.85;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      margin: 0 0 $espacio-sm 0;
+      padding-left: 1.4rem;
+
+      li {
+        font-size: 0.97rem;
+        color: $marron;
+        line-height: 1.85;
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    a {
+      color: $verde-oliva;
+      text-decoration: underline;
+      &:hover { color: $naranja; }
+    }
+
+    strong {
+      color: $marron-tierra;
+      font-weight: $peso-semibold;
+    }
+  }
+
+  &__actualizado {
+    display: block;
+    font-size: 0.82rem;
+    color: $dorado;
+    margin-bottom: $espacio-lg;
+    font-style: italic;
+  }
+
+  &__aviso {
+    display: inline-block;
+    background-color: rgba($naranja, 0.1);
+    border-left: 3px solid $naranja;
+    border-radius: $radio-sm;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.88rem;
+    color: $marron-tierra;
+    margin-bottom: $espacio-sm;
+    font-style: italic;
+  }
+}

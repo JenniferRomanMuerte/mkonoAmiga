@@ -167,11 +167,37 @@
 
   &__inferior {
     padding: $espacio-sm 0;
+    border-top: 1px solid rgba($marron-tierra, 0.15);
+
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+
+      @media (max-width: $bp-movil) {
+        flex-direction: column;
+      }
+    }
 
     p {
-      text-align: center;
       font-size: 0.82rem;
       color: $blanco-35;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    gap: $espacio-sm;
+
+    a {
+      font-size: 0.78rem;
+      color: $blanco-35;
+      text-decoration: none;
+      transition: $transicion;
+
+      &:hover { color: $naranja; }
     }
   }
 }

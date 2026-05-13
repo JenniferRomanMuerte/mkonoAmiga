@@ -56,8 +56,13 @@ function Footer() {
       </div>
 
       <div className="footer__inferior">
-        <div className="contenedor">
+        <div className="contenedor footer__inferior-inner">
           <p>© {año} Mkono Amiga · Asociación sin ánimo de lucro</p>
+          <nav className="footer__legal" aria-label="Enlaces legales">
+            <Link to="/aviso-legal">Aviso Legal</Link>
+            <Link to="/privacidad">Privacidad</Link>
+            <Link to="/cookies">Cookies</Link>
+          </nav>
         </div>
       </div>
     </footer>

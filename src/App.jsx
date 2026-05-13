@@ -7,6 +7,9 @@ import QuienesSomos from './pages/QuienesSomos/QuienesSomos'
 import Programas from './pages/Programas/Programas'
 import Apoyanos from './pages/Apoyanos/Apoyanos'
 import Contacto from './pages/Contacto/Contacto'
+import AvisoLegal from './pages/AvisoLegal/AvisoLegal'
+import Privacidad from './pages/Privacidad/Privacidad'
+import Cookies from './pages/Cookies/Cookies'
 
 // Sube al inicio al cambiar de página
 function ScrollToTop() {
@@ -27,6 +30,9 @@ function App() {
           <Route path="/programas"      element={<Programas />} />
           <Route path="/apoyanos"       element={<Apoyanos />} />
           <Route path="/contacto"       element={<Contacto />} />
+          <Route path="/aviso-legal"    element={<AvisoLegal />} />
+          <Route path="/privacidad"     element={<Privacidad />} />
+          <Route path="/cookies"        element={<Cookies />} />
         </Routes>
       </main>
       <Footer />
