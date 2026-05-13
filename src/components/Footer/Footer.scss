@@ -174,26 +174,29 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 1rem;
 
       @media (max-width: $bp-movil) {
         flex-direction: column;
+
+        p    { order: 2; }
+        nav  { order: 1; }
       }
     }
 
     p {
-      font-size: 0.82rem;
-      color: $blanco-35;
+      font-size: 0.8rem;
+      color: $verde-oliva;
     }
   }
 
   &__legal {
     display: flex;
-    gap: $espacio-sm;
+    gap: $espacio-md;
 
     a {
-      font-size: 0.78rem;
-      color: $blanco-35;
+      font-size: 0.9rem;
+      color: $marron;
       text-decoration: none;
       transition: $transicion;
 
