@@ -22,8 +22,7 @@ function AvisoLegal() {
         <strong>CIF:</strong> G21748462<br />
         <strong>Domicilio social:</strong> Calle Chucuri 12 4D, 28033 Madrid<br />
         <strong>Representante legal:</strong> Nerea Ponce Hernández<br />
-        <strong>Correo electrónico:</strong> asociacion@mkonoamiga.org<br />
-        <strong>Inscrita en:</strong> [RELLENAR: Registro de Asociaciones, comunidad autónoma y número de inscripción]
+        <strong>Correo electrónico:</strong> asociacion@mkonoamiga.org
       </p>
 
       <h2>2. Objeto y ámbito de aplicación</h2>
