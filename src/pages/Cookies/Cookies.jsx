@@ -7,7 +7,7 @@ function Cookies() {
       description="Información sobre el uso de cookies en el sitio web de Mkono Amiga y cómo gestionarlas desde tu navegador."
       path="/cookies"
     >
-      <span className="pagina-legal__actualizado">Última actualización: [RELLENAR: mes y año]</span>
+      <span className="pagina-legal__actualizado">Última actualización: mayo de 2026</span>
 
       <p>
         En cumplimiento con la normativa europea sobre privacidad y cookies (Directiva

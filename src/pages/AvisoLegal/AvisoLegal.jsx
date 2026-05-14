@@ -7,7 +7,7 @@ function AvisoLegal() {
       description="Información legal e identificativa de la asociación Mkono Amiga, en cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información."
       path="/aviso-legal"
     >
-      <span className="pagina-legal__actualizado">Última actualización: [RELLENAR: mes y año]</span>
+      <span className="pagina-legal__actualizado">Última actualización: mayo de 2026</span>
 
       <p>
         En cumplimiento con el deber de información recogido en el artículo 10 de la Ley
@@ -18,9 +18,10 @@ function AvisoLegal() {
 
       <h2>1. Datos identificativos</h2>
       <p>
-        <strong>Denominación social:</strong> [RELLENAR: nombre oficial de la asociación]<br />
-        <strong>CIF:</strong> [RELLENAR: CIF de la asociación]<br />
-        <strong>Domicilio social:</strong> [RELLENAR: dirección completa]<br />
+        <strong>Denominación social:</strong> Mkono Amiga<br />
+        <strong>CIF:</strong> G21748462<br />
+        <strong>Domicilio social:</strong> Calle Chucuri 12 4D, 28033 Madrid<br />
+        <strong>Representante legal:</strong> Nerea Ponce Hernández<br />
         <strong>Correo electrónico:</strong> asociacion@mkonoamiga.org<br />
         <strong>Inscrita en:</strong> [RELLENAR: Registro de Asociaciones, comunidad autónoma y número de inscripción]
       </p>

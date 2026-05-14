@@ -7,7 +7,7 @@ function Privacidad() {
       description="Información sobre el tratamiento de datos personales por parte de Mkono Amiga, en cumplimiento del Reglamento General de Protección de Datos (RGPD)."
       path="/privacidad"
     >
-      <span className="pagina-legal__actualizado">Última actualización: [RELLENAR: mes y año]</span>
+      <span className="pagina-legal__actualizado">Última actualización: mayo de 2026</span>
 
       <p>
         En Mkono Amiga nos comprometemos a proteger tu privacidad y a tratar tus datos
@@ -18,9 +18,10 @@ function Privacidad() {
 
       <h2>1. Responsable del tratamiento</h2>
       <p>
-        <strong>Entidad:</strong> [RELLENAR: nombre oficial de la asociación]<br />
-        <strong>CIF:</strong> [RELLENAR: CIF]<br />
-        <strong>Domicilio:</strong> [RELLENAR: dirección completa]<br />
+        <strong>Entidad:</strong> Mkono Amiga<br />
+        <strong>CIF:</strong> G21748462<br />
+        <strong>Domicilio:</strong> Calle Chucuri 12 4D, 28033 Madrid<br />
+        <strong>Representante:</strong> Nerea Ponce Hernández<br />
         <strong>Correo de contacto:</strong> asociacion@mkonoamiga.org
       </p>
 
@@ -54,7 +55,7 @@ function Privacidad() {
       <h2>4. Conservación de los datos</h2>
       <p>
         Conservamos tus datos durante el tiempo necesario para atender tu solicitud y,
-        como máximo, durante <strong>[RELLENAR: plazo, p. ej. 2 años]</strong> desde
+        como máximo, durante <strong>2 años</strong> desde
         la última comunicación. Transcurrido ese plazo, los datos serán eliminados de
         forma segura.
       </p>
