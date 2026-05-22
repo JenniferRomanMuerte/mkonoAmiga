@@ -8,7 +8,7 @@ function QuienesSomos() {
     <div className="qs">
 
       <SEO
-        title="Quiénes somos"
+        title="Quiénes somos — Asociación española en Uganda"
         description="Mkono Amiga es una asociación sin ánimo de lucro que trabaja en el distrito de Buhweju, Uganda, por los derechos y la dignidad de niños y niñas con discapacidad."
         path="/quienes-somos"
       />

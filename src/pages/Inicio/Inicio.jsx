@@ -9,7 +9,7 @@ function Inicio() {
     <div className="inicio">
 
       <SEO
-        title="Inicio"
+        title="ONG en Uganda — Ayuda a niños con discapacidad"
         description="ONG española que trabaja en Uganda para mejorar la vida de niños y niñas con necesidades especiales mediante atención médica, educación y apoyo familiar."
         path="/"
       />
