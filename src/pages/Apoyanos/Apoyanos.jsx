@@ -48,7 +48,12 @@ function Apoyanos() {
 
           <div className="apoyanos__colabora-grid">
             {formas.map((f, i) => (
-              <article className="apoyanos__colabora-tarjeta" key={i}>
+              <article className={`apoyanos__colabora-tarjeta${f.titulo === 'Zona Solidaria' ? ' apoyanos__colabora-tarjeta--pronto' : ''}`} key={i}>
+                {f.titulo === 'Zona Solidaria' && (
+                  <div className="apoyanos__colabora-overlay" aria-hidden="true">
+                    <span>🚧 En construcción</span>
+                  </div>
+                )}
                 <div className="apoyanos__colabora-tarjeta-header">
                   <span className="apoyanos__colabora-icono" aria-hidden="true">{f.icono}</span>
                   <h3>{f.titulo}</h3>

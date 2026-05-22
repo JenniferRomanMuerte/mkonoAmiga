@@ -296,10 +296,35 @@
       }
     }
 
+    &-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba($marron-oscuro, 0.72);
+      border-radius: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+
+      span {
+        font-family: $fuente-titulo;
+        font-size: 1.4rem;
+        color: $crema;
+        letter-spacing: 0.05rem;
+        text-align: center;
+      }
+    }
+
     &-tarjeta {
       @include card-elevada;
       display: flex;
       flex-direction: column;
+
+      &--pronto {
+        position: relative;
+        pointer-events: none;
+        user-select: none;
+      }
       align-items: stretch;
       padding: $espacio-md;
       background-color: $crema;
