@@ -1,5 +1,5 @@
 export const estadisticas = [
-  { icono: '❤️', numero: '250', descripcion: 'Niños atendidos' },
+  { icono: '❤️', numero: '+200', descripcion: 'Niños atendidos' },
   { icono: '🩺', numero: '170', descripcion: 'Tratamientos médicos' },
   { icono: '📖', numero: '80',  descripcion: 'Niños en talleres semanales' },
 ]
