@@ -81,7 +81,9 @@
       box-shadow: $sombra-media;
 
       @media (max-width: $bp-tablet) {
-        height: 280px;
+        height: 380px;
+        width: 100%;
+        background-position: center center;
       }
     }
   }

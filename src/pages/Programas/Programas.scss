@@ -61,9 +61,11 @@
       animation: entrarDerecha 0.85s ease-out forwards;
 
       @media (max-width: $bp-tablet) {
-        height: 260px;
+        height: 380px;
+        width: 100%;
         clip-path: none;
         border-radius: $radio-xl;
+        background-position: center center;
       }
     }
   }
