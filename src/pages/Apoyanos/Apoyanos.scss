@@ -67,6 +67,20 @@
         display: none;
       }
     }
+
+    &-logo-movil {
+      display: none;
+
+      @media (max-width: $bp-tablet) {
+        display: block;
+        width: 160px;
+        margin-top: $espacio-lg;
+        margin-bottom: $espacio-xs;
+        opacity: 0.82;
+        filter: drop-shadow(0 0 40px rgba($verde-lima, 0.45));
+        animation: logoFlotar 5s ease-in-out infinite;
+      }
+    }
   }
 
   // ── CIFRAS ────────────────────────────────────────────────────────────────

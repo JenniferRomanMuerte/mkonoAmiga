@@ -20,6 +20,7 @@ function Apoyanos() {
             <h1>Apóyanos</h1>
             <p>Tu apoyo es fundamental para seguir cambiando vidas en Uganda.</p>
             <Link to="/contacto?tipo=donacion" className="btn btn--primario">Donar ahora</Link>
+            <img src="/img/LogoMknoAmiga.webp" alt="" className="apoyanos__banner-logo-movil" aria-hidden="true" />
           </div>
           <div className="apoyanos__banner-logo" aria-hidden="true">
             <img src="/img/LogoMknoAmiga.webp" alt="" />
