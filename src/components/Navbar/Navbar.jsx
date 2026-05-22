@@ -24,7 +24,7 @@ function Navbar() {
   const cerrar = () => setMenuAbierto(false)
 
   return (
-    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
+    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}${isHome && !scrolled ? ' navbar--inicio' : ''}`}>
       <div className="contenedor navbar__contenedor">
         <Link to="/" className="navbar__logo" onClick={cerrar}>
           <img

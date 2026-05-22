@@ -18,11 +18,15 @@
     left: 0;
     right: 0;
     height: 10px;
-    background-color: $crema;
+    background: linear-gradient(to right, $naranja 0%, $verde-lima 50%, $naranja 100%);
     @include mascara-ondulada;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.35s ease;
+  }
+
+  &--inicio {
+    &::after { opacity: 1; }
   }
 
   &--scrolled {

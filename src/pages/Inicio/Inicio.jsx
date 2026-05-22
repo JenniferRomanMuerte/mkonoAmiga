@@ -16,23 +16,22 @@ function Inicio() {
 
       {/* ── HERO ── */}
       <section className="inicio__hero" aria-label="Portada">
-        <div className="inicio__hero-contenido">
-          <div className="inicio__hero-texto">
-            <h1 className="inicio__hero-titulo">
-              <span className="inicio__hero-titulo-mkono">Mkono</span>
-              {' '}
-              <span className="inicio__hero-titulo-amiga">Amiga</span>
-            </h1>
-            <p className="inicio__hero-subtitulo">
-              Potenciando habilidades, mejorando vidas<br />
-              y dando rienda suelta a los sueños.
-            </p>
-            <p className="inicio__hero-descripcion">
-              Trabajamos en Uganda para mejorar la vida de niños y niñas con
-              necesidades especiales, ofreciendo atención médica, educación
-              inclusiva y apoyo a sus familias.
-            </p>
-          </div>
+        <div className="inicio__hero-inner">
+        <div className="inicio__hero-izquierda">
+          <h1 className="inicio__hero-titulo">
+            <span className="inicio__hero-titulo-mkono">Mkono</span>
+            {' '}
+            <span className="inicio__hero-titulo-amiga">Amiga</span>
+          </h1>
+          <p className="inicio__hero-subtitulo">
+            Potenciando habilidades, mejorando vidas<br />
+            y dando rienda suelta a los sueños.
+          </p>
+          <p className="inicio__hero-descripcion">
+            Trabajamos en Uganda para mejorar la vida de niños y niñas con
+            necesidades especiales, ofreciendo atención médica, educación
+            inclusiva y apoyo a sus familias.
+          </p>
           <div className="inicio__hero-botones">
             <Link to="/contacto?tipo=donacion" className="btn btn--primario">
               Haz un donativo
@@ -41,6 +40,10 @@ function Inicio() {
               Nuestros proyectos
             </Link>
           </div>
+        </div>
+        <div className="inicio__hero-derecha" aria-hidden="true">
+          <img src="/img/imgHero.webp" alt="" />
+        </div>
         </div>
       </section>
 

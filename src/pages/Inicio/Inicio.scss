@@ -5,44 +5,60 @@
 
   // ── HERO ──────────────────────────────────────────────────────────────────
   &__hero {
-    position: relative;
-    min-height: 100vh;
-    background-image: url('/img/imgHero.webp');
-    background-size: cover;
-    background-position: center top;
-    display: flex;
-    align-items: center;
+    background-color: $marron;
+    min-height: clamp(560px, 88vh, 720px);
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        110deg,
-        rgba(0, 0, 0, 0.62) 0%,
-        rgba(0, 0, 0, 0.35) 55%,
-        rgba(0, 0, 0, 0.08) 100%
-      );
-    }
-
-    &-contenido {
-      position: relative;
-      z-index: 1;
-      width: 100%;
+    &-inner {
+      display: grid;
+      grid-template-columns: 38% 62%;
       max-width: $ancho-max;
       margin: 0 auto;
-      padding: calc(#{$navbar-altura} + #{$espacio-lg}) $espacio-md $espacio-xl;
+      min-height: inherit;
+      overflow: hidden;
+    }
+
+    &-izquierda {
+      background-color: $marron;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      justify-content: center;
       gap: $espacio-md;
+      padding: calc(#{$navbar-altura} + #{$espacio-lg}) $espacio-md $espacio-xl clamp(2rem, 4vw, 4rem);
+    }
+
+    &-derecha {
+      padding-top: calc(#{$navbar-altura} + #{$espacio-lg});
+      display: flex;
+      flex-direction: column;
+      background-color: $marron;
+
+      img {
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        max-height: 700px;
+        object-fit: cover;
+        object-position: center 20%;
+        display: block;
+        clip-path: polygon(
+          10% 0%,
+          100% 0%,
+          100% 100%,
+          10% 100%,
+          4%  83%,
+          11% 65%,
+          3%  47%,
+          10% 29%,
+          4%  12%
+        );
+        animation: heroFotoEntrar 1.2s ease-out forwards;
+      }
     }
 
     &-titulo {
-      font-size: clamp(4rem, 9vw, 6.2rem);
+      font-size: clamp(3.4rem, 5.5vw, 6.2rem);
       line-height: 1.05;
-      margin-bottom: $espacio-sm;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.08rem;
       text-shadow: 2px 2px 10px $marron-oscuro;
 
       &-mkono { color: $verde-lima; }
@@ -51,39 +67,48 @@
 
     &-subtitulo {
       font-family: $fuente-titulo;
-      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
       color: $blanco;
       font-weight: 400;
       line-height: 1.35;
       letter-spacing: 0.06rem;
-      margin-bottom: $espacio-sm;
     }
 
     &-descripcion {
       font-size: 0.95rem;
       color: $blanco-82;
       line-height: 1.75;
-      max-width: 440px;
+      max-width: 400px;
     }
 
     &-botones {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
       gap: $espacio-sm;
     }
 
     @media (max-width: $bp-tablet) {
-      &-contenido {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: $espacio-md;
-        padding: calc(#{$navbar-altura} + #{$espacio-md}) $espacio-sm $espacio-lg;
+      &-inner {
+        grid-template-columns: 1fr;
+        min-height: unset;
       }
 
-      &-botones {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+      &-izquierda {
+        order: 2;
+        padding: $espacio-lg $espacio-sm $espacio-xl;
+        gap: $espacio-sm;
+      }
+
+      &-derecha {
+        order: 1;
+
+
+        img {
+          height: 75vw;
+          flex: unset;
+          clip-path: none;
+          object-position: center 50%;
+        }
       }
     }
   }
@@ -271,4 +296,15 @@
     }
   }
 
+}
+
+@keyframes heroFotoEntrar {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
