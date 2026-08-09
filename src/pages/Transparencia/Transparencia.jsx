@@ -104,7 +104,7 @@ function Transparencia() {
           <p>
             <strong>Denominación:</strong> Mkono Amiga<br />
             <strong>CIF:</strong> G21748462<br />
-            <strong>Domicilio:</strong> Calle Chucuri 12 4D, 28033 Madrid<br />
+            <strong>Ubicación:</strong> Madrid, España<br />
             <strong>Naturaleza:</strong> Asociación sin ánimo de lucro
           </p>
           <p className="transparencia__entidad-nota">
