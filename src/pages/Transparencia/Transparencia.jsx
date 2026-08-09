@@ -10,6 +10,7 @@ function Transparencia() {
         title="Transparencia y buen gobierno"
         description="Consulta y descarga los documentos de transparencia de Mkono Amiga: código ético, política de protección infantil, igualdad de género, antifraude, voluntariado y canal de denuncias."
         path="/transparencia"
+        image="/img/transparencia.webp"
       />
 
       {/* ── BANNER ── */}
