@@ -54,6 +54,7 @@ function Navbar() {
             <li><NavLink to="/quienes-somos"     onClick={cerrar}>Quiénes somos</NavLink></li>
             <li><NavLink to="/programas"         onClick={cerrar}>Programas</NavLink></li>
             <li><NavLink to="/apoyanos"          onClick={cerrar}>Apóyanos</NavLink></li>
+            <li><NavLink to="/transparencia"     onClick={cerrar}>Transparencia</NavLink></li>
             <li><NavLink to="/contacto"          onClick={cerrar}>Contacto</NavLink></li>
             <li>
               <a

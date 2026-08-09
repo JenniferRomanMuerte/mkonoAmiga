@@ -28,7 +28,7 @@
 
 // Fondo degradado de banners interiores (marrón → crema)
 @mixin banner-interior {
-  background: linear-gradient(180deg, $marron-tierra 0%, $crema 80%);
+  background: linear-gradient(180deg, $marron-tierra 10%, $crema 80%);
 }
 
 // Sombra en títulos de banner

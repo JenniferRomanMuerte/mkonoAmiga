@@ -6,6 +6,7 @@ import Inicio from './pages/Inicio/Inicio'
 import QuienesSomos from './pages/QuienesSomos/QuienesSomos'
 import Programas from './pages/Programas/Programas'
 import Apoyanos from './pages/Apoyanos/Apoyanos'
+import Transparencia from './pages/Transparencia/Transparencia'
 import Contacto from './pages/Contacto/Contacto'
 import AvisoLegal from './pages/AvisoLegal/AvisoLegal'
 import Privacidad from './pages/Privacidad/Privacidad'
@@ -29,6 +30,7 @@ function App() {
           <Route path="/quienes-somos"  element={<QuienesSomos />} />
           <Route path="/programas"      element={<Programas />} />
           <Route path="/apoyanos"       element={<Apoyanos />} />
+          <Route path="/transparencia"  element={<Transparencia />} />
           <Route path="/contacto"       element={<Contacto />} />
           <Route path="/aviso-legal"    element={<AvisoLegal />} />
           <Route path="/privacidad"     element={<Privacidad />} />
