@@ -48,7 +48,8 @@ function Privacidad() {
       <h2>3. Base jurídica del tratamiento</h2>
       <p>
         El tratamiento de los datos del formulario de contacto se basa en el
-        <strong> consentimiento</strong> que prestas al enviarnos tu mensaje, de acuerdo
+        <strong> consentimiento</strong> que prestas al marcar la casilla de aceptación de
+        esta política antes de enviarnos tu mensaje, de acuerdo
         con el artículo 6.1.a del RGPD.
       </p>
 

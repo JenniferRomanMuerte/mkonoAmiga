@@ -106,6 +106,73 @@
     textarea {
       min-height: 140px;
     }
+
+    input[aria-invalid='true'],
+    textarea[aria-invalid='true'] {
+      border-color: $error-color;
+    }
+  }
+
+  &__campo-error {
+    font-size: 0.9rem;
+    color: $error-color;
+  }
+
+  // Campo trampa para bots: fuera de la vista y del foco
+  &__botcheck {
+    display: none;
+  }
+
+  // ── PROTECCIÓN DE DATOS ───────────────────────────────────────────────────
+  &__rgpd {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: $marron;
+    background-color: $gris-claro;
+    border-radius: $radio-md;
+    padding: 0.75rem 1rem;
+    margin: $espacio-sm 0;
+
+    &-titulo {
+      font-weight: $peso-semibold;
+      margin-bottom: 0.3rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      color: $naranja-hover;
+      word-break: break-word;
+    }
+  }
+
+  &__consentimiento {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: $espacio-xs;
+
+    input {
+      flex-shrink: 0;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-top: 0.2rem;
+      accent-color: $naranja;
+      cursor: pointer;
+    }
+
+    label {
+      font-size: 1rem;
+      color: $marron;
+      cursor: pointer;
+    }
+
+    a {
+      color: $naranja-hover;
+      text-decoration: underline;
+    }
   }
 
   &__error {
