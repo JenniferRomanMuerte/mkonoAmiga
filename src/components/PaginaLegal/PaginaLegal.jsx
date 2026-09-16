@@ -1,14 +1,18 @@
 import SEO from '../SEO/SEO'
+import { seoDe } from '../../data/rutas'
 import './PaginaLegal.scss'
 
-function PaginaLegal({ title, description, path, image, children }) {
+// El título y la descripción salen de src/data/rutas.js
+function PaginaLegal({ path, children }) {
+  const seo = seoDe(path)
+
   return (
     <div className="pagina-legal">
-      <SEO title={title} description={description} path={path} image={image} />
+      <SEO {...seo} />
 
       <section className="pagina-legal__banner">
         <div className="contenedor">
-          <h1>{title}</h1>
+          <h1>{seo.title}</h1>
         </div>
       </section>
 

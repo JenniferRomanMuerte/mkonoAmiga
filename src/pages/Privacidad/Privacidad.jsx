@@ -2,11 +2,7 @@ import PaginaLegal from '../../components/PaginaLegal/PaginaLegal'
 
 function Privacidad() {
   return (
-    <PaginaLegal
-      title="Política de Privacidad"
-      description="Información sobre el tratamiento de datos personales por parte de Mkono Amiga, en cumplimiento del Reglamento General de Protección de Datos (RGPD)."
-      path="/privacidad"
-    >
+    <PaginaLegal path="/privacidad">
       <span className="pagina-legal__actualizado">Última actualización: mayo de 2026</span>
 
       <p>

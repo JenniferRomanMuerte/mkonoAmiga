@@ -28,6 +28,36 @@ body {
   overflow-x: hidden;
 }
 
+// === ACCESIBILIDAD ===
+// Enlace "Saltar al contenido": fuera de la vista hasta que recibe el foco con el teclado
+.saltar-contenido {
+  position: absolute;
+  top: 0;
+  left: $espacio-sm;
+  z-index: 2000;
+  transform: translateY(-120%);
+  padding: 0.75rem 1.25rem;
+  font-family: $fuente-cuerpo;
+  font-size: 1rem;
+  font-weight: $peso-bold;
+  color: $blanco;
+  background-color: $naranja-hover;
+  border-radius: 0 0 $radio-md $radio-md;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+
+  &:focus {
+    transform: translateY(0);
+    outline: 3px solid $blanco;
+    outline-offset: -6px;
+  }
+}
+
+// El contenido principal recibe el foco desde ese enlace: sin marco al hacerlo
+main:focus {
+  outline: none;
+}
+
 // === TIPOGRAFÍA ===
 h1,
 h2,

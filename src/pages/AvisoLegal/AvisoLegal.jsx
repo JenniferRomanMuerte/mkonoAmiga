@@ -2,11 +2,7 @@ import PaginaLegal from '../../components/PaginaLegal/PaginaLegal'
 
 function AvisoLegal() {
   return (
-    <PaginaLegal
-      title="Aviso Legal"
-      description="Información legal e identificativa de la asociación Mkono Amiga, en cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información."
-      path="/aviso-legal"
-    >
+    <PaginaLegal path="/aviso-legal">
       <span className="pagina-legal__actualizado">Última actualización: mayo de 2026</span>
 
       <p>

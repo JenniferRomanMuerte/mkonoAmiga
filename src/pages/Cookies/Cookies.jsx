@@ -2,11 +2,7 @@ import PaginaLegal from '../../components/PaginaLegal/PaginaLegal'
 
 function Cookies() {
   return (
-    <PaginaLegal
-      title="Política de Cookies"
-      description="Información sobre el uso de cookies en el sitio web de Mkono Amiga y cómo gestionarlas desde tu navegador."
-      path="/cookies"
-    >
+    <PaginaLegal path="/cookies">
       <span className="pagina-legal__actualizado">Última actualización: septiembre de 2026</span>
 
       <p>

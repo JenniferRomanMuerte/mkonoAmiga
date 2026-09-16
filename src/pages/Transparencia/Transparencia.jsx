@@ -1,17 +1,13 @@
 import { documentos } from '../../data/transparenciaData'
 import SEO from '../../components/SEO/SEO'
+import { seoDe } from '../../data/rutas'
 import './Transparencia.scss'
 
 function Transparencia() {
   return (
     <div className="transparencia">
 
-      <SEO
-        title="Transparencia y buen gobierno"
-        description="Consulta y descarga los documentos de transparencia de Mkono Amiga: código ético, política de protección infantil, igualdad de género, antifraude, voluntariado y canal de denuncias."
-        path="/transparencia"
-        image="/img/transparencia.webp"
-      />
+      <SEO {...seoDe('/transparencia')} />
 
       {/* ── BANNER ── */}
       <section className="transparencia__banner">

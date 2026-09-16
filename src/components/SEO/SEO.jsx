@@ -1,16 +1,21 @@
 import { Helmet } from 'react-helmet-async'
+import {
+  SITE_NAME,
+  SITE_URL,
+  OG_IMAGE_POR_DEFECTO,
+  OG_IMAGE_ANCHO,
+  OG_IMAGE_ALTO,
+  tituloCompleto,
+  urlAbsoluta,
+} from '../../data/sitio'
 
-const SITE_NAME = 'Mkono Amiga'
-// TODO: actualizar VITE_SITE_URL en .env cuando tengáis el dominio real
-const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://mkonoamiga.netlify.app'
-// Imagen que se muestra al compartir el enlace cuando la página no indica otra
-const OG_IMAGE_POR_DEFECTO = '/img/imgHero.webp'
-
+// Actualiza las etiquetas al navegar dentro de la web. Las que ven WhatsApp,
+// Facebook o Google al entrar directamente se generan en el build a partir
+// de src/data/rutas.js (ver vite.config.js).
 function SEO({ title, description, path = '', image = OG_IMAGE_POR_DEFECTO }) {
-  const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME
+  const pageTitle = tituloCompleto(title)
   const canonical = `${SITE_URL}${path}`
-  // Las redes sociales exigen URL absoluta, así que aceptamos ruta relativa o completa
-  const ogImage = image.startsWith('http') ? image : `${SITE_URL}${image}`
+  const ogImage = urlAbsoluta(image)
 
   return (
     <Helmet>
@@ -18,13 +23,15 @@ function SEO({ title, description, path = '', image = OG_IMAGE_POR_DEFECTO }) {
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
 
-      <meta property="og:type"        content="website" />
-      <meta property="og:site_name"   content={SITE_NAME} />
-      <meta property="og:title"       content={pageTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url"         content={canonical} />
-      <meta property="og:image"       content={ogImage} />
-      <meta property="og:locale"      content="es_ES" />
+      <meta property="og:type"         content="website" />
+      <meta property="og:site_name"    content={SITE_NAME} />
+      <meta property="og:title"        content={pageTitle} />
+      <meta property="og:description"  content={description} />
+      <meta property="og:url"          content={canonical} />
+      <meta property="og:image"        content={ogImage} />
+      <meta property="og:image:width"  content={String(OG_IMAGE_ANCHO)} />
+      <meta property="og:image:height" content={String(OG_IMAGE_ALTO)} />
+      <meta property="og:locale"       content="es_ES" />
 
       <meta name="twitter:card"        content="summary_large_image" />
       <meta name="twitter:title"       content={pageTitle} />

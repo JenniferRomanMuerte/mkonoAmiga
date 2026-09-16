@@ -4,6 +4,7 @@ import { ASUNTOS } from '../../data/contactoData'
 import { validarContacto, LIMITES } from '../../utils/validarContacto'
 import PanelDonacion from '../../components/PanelDonacion/PanelDonacion'
 import SEO from '../../components/SEO/SEO'
+import { seoDe } from '../../data/rutas'
 import './Contacto.scss'
 
 const FORM_VACIO = {
@@ -30,6 +31,9 @@ function Contacto() {
     const tipo = searchParams.get('tipo')
     const preset = ASUNTOS[tipo]
     if (preset) {
+      // Rellena asunto y mensaje según el enlace desde el que se llega (?tipo=...).
+      // Funciona bien; reescribirlo sin efecto no aporta nada ahora mismo.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setForm(prev => ({
         ...prev,
         asunto:  preset.asunto,
@@ -101,12 +105,11 @@ function Contacto() {
     <div className="contacto">
 
       <SEO
-        title={esDonacion ? 'Donaciones económicas' : 'Contacto'}
-        description={esDonacion
-          ? 'Realiza tu donación a Mkono Amiga por transferencia, Bizum, Teaming o PayPal. Los donativos desgravan hasta un 80%.'
-          : 'Contacta con Mkono Amiga para donar, ser voluntario, hacerte socio o colaborar con nuestra ONG en Uganda.'
-        }
-        path="/contacto"
+        {...seoDe('/contacto')}
+        {...(esDonacion && {
+          title: 'Donaciones económicas',
+          description: 'Realiza tu donación a Mkono Amiga por transferencia, Bizum, Teaming o PayPal. Los donativos desgravan hasta un 80%.',
+        })}
       />
 
       {/* ── BANNER ── */}
