@@ -1,0 +1,41 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+  [build.environment]
+    # Misma versión que en local: si Netlify cambia la suya, el build no se rompe
+    NODE_VERSION = "22.14.0"
+
+# Las rutas de cada página (/programas → programas.html) y la redirección SPA
+# se generan en el build como dist/_redirects (ver scripts/vite-plugin-paginas.js)
+
+# ── Cabeceras de seguridad ──────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000"
+
+# ── Caché ───────────────────────────────────────────────────────────────────
+# JS y CSS de Vite: llevan un hash en el nombre, así que cada cambio es un
+# archivo nuevo y se pueden guardar un año sin riesgo
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Imágenes y PDF: NO llevan hash. Si se sustituye un archivo con el mismo nombre
+# (como al optimizar las imágenes), una caché de un año seguiría mostrando el
+# antiguo a quien ya lo tuviera. Una semana, y revalidar en segundo plano.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/pdfs/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
