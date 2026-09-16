@@ -319,7 +319,70 @@
     box-shadow: $sombra-fuerte;
 
     @media (max-width: $bp-tablet) {
-      height: 300px;
+      height: auto;
+      min-height: 300px;
+
+      iframe { height: 300px; }
+    }
+
+    &-aviso {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: $espacio-sm;
+      text-align: center;
+      padding: $espacio-md $espacio-md $espacio-lg;
+      // Captura estática de OpenStreetMap bajo un velo oscuro para que el texto se lea
+      background-color: $marron-oscuro;
+      background-image:
+        linear-gradient(rgba($marron-oscuro, 0.78), rgba($marron-oscuro, 0.78)),
+        url('/img/imgMapsBuhweju.webp');
+      background-size: cover;
+      // Centrado aproximado en el marcador de Buhweju de la captura
+      background-position: 58% 57%;
+      border: 1px solid $blanco-35;
+      border-radius: $radio-xl;
+
+      p {
+        color: $blanco-85;
+        max-width: 380px;
+      }
+
+      a {
+        color: $crema;
+        text-decoration: underline;
+      }
+
+      .btn { white-space: normal; }
+
+      .qs__mapa-titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.8rem;
+        color: $crema;
+      }
+    }
+
+    &-icono { font-size: 2.5rem; }
+
+    &-aviso &-credito {
+      position: absolute;
+      right: 0.75rem;
+      bottom: 0.6rem;
+      font-size: 0.8rem;
+      color: $blanco-85;
+      background-color: rgba($marron-oscuro, 0.7);
+      border-radius: $radio-sm;
+      padding: 0.1rem 0.45rem;
+
+      a {
+        color: $blanco-85;
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+      }
     }
   }
 

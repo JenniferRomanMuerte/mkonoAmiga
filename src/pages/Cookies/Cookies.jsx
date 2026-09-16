@@ -7,7 +7,7 @@ function Cookies() {
       description="Información sobre el uso de cookies en el sitio web de Mkono Amiga y cómo gestionarlas desde tu navegador."
       path="/cookies"
     >
-      <span className="pagina-legal__actualizado">Última actualización: mayo de 2026</span>
+      <span className="pagina-legal__actualizado">Última actualización: septiembre de 2026</span>
 
       <p>
         En cumplimiento con la normativa europea sobre privacidad y cookies (Directiva
@@ -30,10 +30,18 @@ function Cookies() {
 
       <h2>3. Cookies de terceros</h2>
       <p>
-        Este sitio incluye un mapa interactivo proporcionado por <strong>Google Maps</strong>.
-        Al cargar la página de contacto, Google puede instalar cookies técnicas necesarias
-        para el funcionamiento del mapa. Mkono Amiga no controla estas cookies ni tiene
-        acceso a los datos que Google pueda recoger a través de ellas.
+        La página <strong>Quiénes somos</strong> incluye un mapa interactivo proporcionado
+        por <strong>Google Maps</strong>. Si lo cargas, Google puede instalar en tu
+        dispositivo cookies de terceros y recoger datos como tu dirección IP. No son cookies
+        necesarias para el funcionamiento de este sitio, y Mkono Amiga no controla estas
+        cookies ni tiene acceso a los datos que Google recoja a través de ellas.
+      </p>
+      <p>
+        Por eso <strong>el mapa no se carga automáticamente</strong>: en su lugar se muestra
+        un aviso, y solo se carga si pulsas <em>«Aceptar y ver mapa»</em>. Si no lo aceptas,
+        no se instala ninguna cookie de Google. Tu aceptación vale solo para esa visita: al
+        recargar o volver a la página, el mapa vuelve a quedar bloqueado hasta que lo aceptes
+        de nuevo.
       </p>
       <p>
         Puedes consultar la política de cookies de Google en:{' '}
@@ -48,9 +56,10 @@ function Cookies() {
 
       <h2>4. Cómo gestionar las cookies</h2>
       <p>
-        Puedes configurar tu navegador para aceptar, rechazar o eliminar las cookies.
-        Ten en cuenta que desactivarlas puede afectar al funcionamiento del mapa en la
-        página de contacto. Instrucciones para los navegadores más habituales:
+        Puedes retirar tu consentimiento en cualquier momento eliminando las cookies de
+        Google desde tu navegador. También puedes configurarlo para aceptar, rechazar o
+        eliminar cookies; si bloqueas las de terceros, es posible que el mapa de la página
+        Quiénes somos no funcione. Instrucciones para los navegadores más habituales:
       </p>
       <ul>
         <li>

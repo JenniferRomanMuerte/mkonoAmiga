@@ -1,9 +1,18 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { valores, equipo } from '../../data/quienesSomosData'
 import SEO from '../../components/SEO/SEO'
 import './QuienesSomos.scss'
 
 function QuienesSomos() {
+  const [mapaAceptado, setMapaAceptado] = useState(false)
+  const mapaRef = useRef(null)
+
+  // Al aceptar, el botón desaparece: llevamos el foco al mapa para no perderlo
+  useEffect(() => {
+    if (mapaAceptado) mapaRef.current?.focus()
+  }, [mapaAceptado])
+
   return (
     <div className="qs">
 
@@ -139,16 +148,54 @@ function QuienesSomos() {
           </div>
 
           <div className="qs__mapa">
-            <iframe
-              title="Buhweju, Uganda"
-              src="https://maps.google.com/maps?q=Buhweju,Uganda&t=&z=10&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            {mapaAceptado ? (
+              <iframe
+                ref={mapaRef}
+                title="Mapa de Buhweju, Uganda"
+                src="https://maps.google.com/maps?q=Buhweju,Uganda&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              // El mapa de Google instala cookies de terceros: solo se carga tras aceptarlo
+              <div className="qs__mapa-aviso">
+                <span className="qs__mapa-icono" aria-hidden="true">📍</span>
+                <p className="qs__mapa-titulo">Buhweju, Uganda</p>
+                <p>
+                  Este mapa lo ofrece Google Maps, que instala cookies de terceros en tu
+                  dispositivo. Solo lo cargaremos si lo aceptas.{' '}
+                  <Link to="/cookies">Más información</Link>
+                </p>
+                <button
+                  type="button"
+                  className="btn btn--primario"
+                  onClick={() => setMapaAceptado(true)}
+                >
+                  Aceptar y ver mapa
+                </button>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Buhweju%2C+Uganda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  O ábrelo directamente en Google Maps
+                </a>
+                {/* Crédito obligatorio por la licencia de la imagen de fondo (OpenStreetMap) */}
+                <small className="qs__mapa-credito">
+                  ©{' '}
+                  <a
+                    href="https://www.openstreetmap.org/copyright"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    OpenStreetMap contributors
+                  </a>
+                </small>
+              </div>
+            )}
           </div>
         </div>
       </section>
